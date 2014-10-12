@@ -9,6 +9,7 @@ var a11y    = require('../lib/index.js');
 var axs     = require('accessibility-developer-tools/dist/js/axs_testing.js');
 var pkg     = require('../package.json');
 var argv    = require('minimist')((process.argv.slice(2)));
+var query   = process.argv[2];
 var opts = {};
 
 process.title = 'a11y';
@@ -32,6 +33,10 @@ if (process.argv.indexOf('-v') !== -1 || process.argv.indexOf('--version') !== -
 
 if(argv.url){
     opts.url = argv.url;
+}
+
+if (query.indexOf('http') !== -1) {
+    opts.url = argv._[0];
 }
 
 // Display help if no valid URL supplied
