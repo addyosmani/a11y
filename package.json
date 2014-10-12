@@ -1,0 +1,33 @@
+{
+  "name": "a11y",
+  "version": "1.0.0",
+  "description": "Runs an accessibility audit using the Chrome Accessibility Tools",
+  "main": "./lib/index.js",
+  "bin": {
+    "a11y": "./bin/a11y"
+  },
+  "scripts": {
+    "test": "npm test",
+    "demo": "node ./bin/a11y.js http://theverge.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/addyosmani/a11y"
+  },
+  "keywords": [
+    "audit",
+    "accessibility",
+    "a11y"
+  ],
+  "author": "Addy Osmani",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/addyosmani/a11y/issues"
+  },
+  "homepage": "https://github.com/addyosmani/a11y",
+  "dependencies": {
+    "accessibility-developer-tools": "git://github.com/GoogleChrome/accessibility-developer-tools",
+    "nopt": "^3.0.1",
+    "phantomjs": "^1.9.10"
+  }
+}
