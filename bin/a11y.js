@@ -1,27 +1,50 @@
-#!/bin/env node
-
+#!/usr/bin/env node
+'use strict';
 /**
  * Binary will be available by executing `npm install a11y -g`
  */
 
-'use strict';
-
-var a11y = require('../lib/index.js');
-var axs  = require('accessibility-developer-tools/dist/js/axs_testing.js');
-var args = process.argv.slice( 2 );
+// Awesome internal and external libs
+var a11y    = require('../lib/index.js');
+var axs     = require('accessibility-developer-tools/dist/js/axs_testing.js');
+var pkg     = require('../package.json');
+var argv    = require('minimist')((process.argv.slice(2)));
 var opts = {};
 
-if ( args.length < 1 ) {
-    console.error( 'A valid URL must be supplied' );
-    process.exit(1);
+process.title = 'a11y';
+
+/**
+ * Display CLI help
+ */
+function printHelp() {
+    console.log(pkg.description);
+    console.log('');
+    console.log('Usage:');
+    console.log('  $ a11y <url>');
+    console.log('');
 }
 
-opts.url = process.argv[2];
+// Display package version
+if (process.argv.indexOf('-v') !== -1 || process.argv.indexOf('--version') !== -1) {
+    console.log(pkg.version);
+    return;
+}
 
-a11y( opts, function ( err, reports ) {
-  if ( err ) {
-      console.error( err.message );
-      process.exit( err.errcode );
-  }
-  console.log(JSON.parse( reports ));
+if(argv.url){
+    opts.url = argv.url;
+}
+
+// Display help if no valid URL supplied
+if(!opts.url){
+    printHelp();
+    return;
+}
+
+a11y( opts, function (err, reports) {
+    if ( err ) {
+        console.error(err.message);
+        process.exit(err.errcode);
+    }
+    console.log(JSON.parse(reports));
+
 });
