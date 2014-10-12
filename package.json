@@ -33,6 +33,7 @@
   "homepage": "https://github.com/addyosmani/a11y",
   "dependencies": {
     "accessibility-developer-tools": "git://github.com/GoogleChrome/accessibility-developer-tools",
+    "chalk": "^0.5.1",
     "minimist": "^1.1.0",
     "nopt": "^3.0.1",
     "phantomjs": "^1.9.10"

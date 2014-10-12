@@ -9,6 +9,7 @@ var a11y    = require('../lib/index.js');
 var axs     = require('accessibility-developer-tools/dist/js/axs_testing.js');
 var pkg     = require('../package.json');
 var argv    = require('minimist')((process.argv.slice(2)));
+var chalk   = require('chalk');
 var query   = process.argv[2];
 var opts = {};
 
@@ -46,10 +47,31 @@ if(!opts.url){
 }
 
 a11y( opts, function (err, reports) {
+
     if ( err ) {
-        console.error(err.message);
-        process.exit(err.errcode);
+        console.error( err.message );
+        process.exit( err.errcode );
+    } else {
+        var output = JSON.parse( reports );
+        var passes   = "";
+        var failures = "";
+
+        output.forEach(function( report ){
+            var entry = report;
+
+            if ( entry.result === 'PASS' ) {
+                passes += chalk.green('✔︎ ' + entry.heading + '\n');
+            }
+
+            if ( entry.result === 'FAIL' ) {
+                failures += chalk.red('✘ ' + entry.heading + '\n');
+            }
+        });
+
+        console.log( failures );
+        console.log( passes );
     }
-    console.log(JSON.parse(reports));
+
+//console.log(JSON.parse(reports));
 
 });
