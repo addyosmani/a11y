@@ -60,13 +60,15 @@ a11y( opts, function ( err, reports ) {
         process.exit( err.errcode );
     } else {
         if ( opts.verbose === true ) {
-            console.log( reports );
+            console.log( JSON.parse(reports) );
         } else {
-            var output = JSON.parse( reports );
+            var output = JSON.parse( reports);
+            var audit = output.audit;
+            var report = output.report;
             var passes   = "";
             var failures = "";
 
-            output.forEach(function( report ){
+            audit.forEach(function( report ){
                 var entry = report;
 
                 if ( entry.result === 'PASS' ) {
@@ -75,11 +77,14 @@ a11y( opts, function ( err, reports ) {
 
                 if ( entry.result === 'FAIL' ) {
                     failures += chalk.red( logSymbols.error + ' ' + entry.heading + '\n' );
+                    failures += entry.elements + '\n\n';
                 }
+
             });
 
             console.log( failures );
-            console.log( passes );            
+            console.log( passes );
+
         }
     }
 
