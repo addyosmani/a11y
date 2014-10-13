@@ -59,11 +59,10 @@ a11y( opts, function ( err, reports ) {
         console.error( err.message );
         process.exit( err.errcode );
     } else {
-        var output = JSON.parse( reports );
-
         if ( opts.verbose === true ) {
             console.log( reports );
         } else {
+            var output = JSON.parse( reports );
             var passes   = "";
             var failures = "";
 
