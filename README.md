@@ -17,12 +17,10 @@ $ npm install -g a11y
 
 ## Usage
 
-```sh
-$ a11y <url>
-```
+Run an audit against a URL:
 
 ```sh
-$ a11y --help
+$ a11y <url>
 ```
 
 ## Example
@@ -39,3 +37,16 @@ $ a11y http://cnn.com
 ✔︎ The purpose of each link should be clear from the link text
 ✔︎ The web page should have a title that describes topic or purpose
 ```
+
+Query help:
+
+```sh
+$ a11y --help
+```
+
+Verbose mode:
+
+```sh
+$ a11y <url> -f
+```
+

@@ -25,12 +25,19 @@ function printHelp() {
     console.log('Usage:');
     console.log('  $ a11y <url>');
     console.log('');
+    console.log('Verbose mode:')
+    console.log('  $ a11y <url> -f');
 }
 
 // Display package version
 if ( process.argv.indexOf('-v') !== -1 || process.argv.indexOf('--version') !== -1 ) {
     console.log(pkg.version);
     return;
+}
+
+// Display complete output
+if ( process.argv.indexOf('-f') !== -1 || process.argv.indexOf('--full') !== -1 ) {
+    opts.verbose = true;
 }
 
 if( argv.url ){
@@ -48,31 +55,33 @@ if( !opts.url ){
 }
 
 a11y( opts, function ( err, reports ) {
-
     if ( err ) {
         console.error( err.message );
         process.exit( err.errcode );
     } else {
         var output = JSON.parse( reports );
-        var passes   = "";
-        var failures = "";
 
-        output.forEach(function( report ){
-            var entry = report;
+        if ( opts.verbose === true ) {
+            console.log( reports );
+        } else {
+            var passes   = "";
+            var failures = "";
 
-            if ( entry.result === 'PASS' ) {
-                passes += chalk.green( logSymbols.success + ' ' + entry.heading + '\n' );
-            }
+            output.forEach(function( report ){
+                var entry = report;
 
-            if ( entry.result === 'FAIL' ) {
-                failures += chalk.red( logSymbols.error + ' ' + entry.heading + '\n' );
-            }
-        });
+                if ( entry.result === 'PASS' ) {
+                    passes += chalk.green( logSymbols.success + ' ' + entry.heading + '\n' );
+                }
 
-        console.log( failures );
-        console.log( passes );
+                if ( entry.result === 'FAIL' ) {
+                    failures += chalk.red( logSymbols.error + ' ' + entry.heading + '\n' );
+                }
+            });
+
+            console.log( failures );
+            console.log( passes );            
+        }
     }
-
-//console.log(JSON.parse(reports));
 
 });
