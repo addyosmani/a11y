@@ -15,7 +15,7 @@ $ npm install -g a11y
 
 *PhantomJS, which is used for generating the screenshots, is installed automagically, but in some [rare cases](https://github.com/Obvious/phantomjs/issues/102) it might fail to and you'll get an `Error: spawn EACCES` error. [Download](http://phantomjs.org/download.html) PhantomJS manually and reinstall pageres if that happens.*
 
-## Usage
+## CLI usage
 
 Run an audit against a URL:
 
@@ -50,3 +50,13 @@ Verbose mode:
 $ a11y <url> -f
 ```
 
+## Module usage
+
+```javascript
+var a11y = require('a11y');
+
+a11y({ url: 'http://twitter.com' }, function( err, reports ) {
+  console.log( JSON.parse( reports ) );
+});
+
+```
