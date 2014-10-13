@@ -5,7 +5,7 @@ a11y
 
 Easy accessibility audits powered by the Chrome Accessibility Tools.
 
-![](http://i.imgur.com/IlQk8Mm.png)
+![](http://i.imgur.com/4jHgzDL.png)
 
 ## Install
 
@@ -25,18 +25,7 @@ $ a11y <url>
 
 ## Example
 
-```sh
-$ a11y http://cnn.com
-✘ Controls and media elements should have labels
-✘ These elements are focusable but either invisible or obscured by another element
-✘ Images should have an alt attribute
-✘ Text elements should have a reasonable contrast ratio
-✘ Meaningful images should not be used in element backgrounds
-
-✔︎ ARIA state and property values must be valid
-✔︎ The purpose of each link should be clear from the link text
-✔︎ The web page should have a title that describes topic or purpose
-```
+![](http://i.imgur.com/lNG4fyB.png)
 
 Query help:
 
@@ -56,7 +45,9 @@ $ a11y <url> -f
 var a11y = require('a11y');
 
 a11y({ url: 'http://twitter.com' }, function( err, reports ) {
-  console.log( JSON.parse( reports ) );
+    var output = JSON.parse( reports);
+    var audit = output.audit; // a11y Formatted report
+    var report = output.report; // DevTools Accessibility Audit formatted report
 });
 
 ```
