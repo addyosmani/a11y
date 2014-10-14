@@ -24,7 +24,6 @@ Run an audit against a URL:
 $ a11y <url>
 ```
 
-
 ## Example
 
 ![](http://i.imgur.com/lNG4fyB.png)
@@ -41,6 +40,11 @@ Verbose mode:
 $ a11y <url> --verbose
 ```
 
+Write audit to file:
+
+```sh
+$ a11y <url> >> audit.txt
+```
 
 ## Module usage
 
