@@ -4,7 +4,7 @@
 
 > Easy accessibility audits powered by the Chrome Accessibility Tools.
 
-![](http://i.imgur.com/4jHgzDL.png)
+![](http://i.imgur.com/W3cfB0R.png)
 
 
 ## Install
@@ -26,7 +26,7 @@ $ a11y <url>
 
 ## Example
 
-![](http://i.imgur.com/lNG4fyB.png)
+![](http://i.imgur.com/52cHKKE.png)
 
 Query help:
 
