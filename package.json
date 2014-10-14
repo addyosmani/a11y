@@ -5,22 +5,20 @@
   "license": "BSD",
   "repository": "addyosmani/a11y",
   "author": "Addy Osmani",
-  "main": "lib",
   "bin": {
-    "a11y": "bin/a11y.js"
+    "a11y": "cli.js"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
     "test": "mocha",
-    "demo": "node ./bin/a11y.js http://theverge.com"
+    "demo": "node cli.js http://theverge.com"
   },
   "files": [
-    "bin/a11y.js",
-    "lib/index.js",
-    "lib/phantomjs/audits.js",
-    "lib/phantomjs/config.json"
+    "index.js",
+    "cli.js",
+    "audits.js"
   ],
   "keywords": [
     "cli-app",

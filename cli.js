@@ -5,9 +5,9 @@
  */
 
 // Awesome internal and external libs
-var a11y    = require('../lib/index.js');
+var a11y    = require('./');
 var axs     = require('accessibility-developer-tools/dist/js/axs_testing.js');
-var pkg     = require('../package.json');
+var pkg     = require('./package.json');
 var argv    = require('minimist')((process.argv.slice(2)));
 var chalk   = require('chalk');
 var logSymbols = require('log-symbols');

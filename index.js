@@ -6,14 +6,11 @@ var path = require('path');
 var phantomjs = require('phantomjs');
 var binaryPath = phantomjs.path;
 var spawnprocess = require('child_process').spawn;
-
-// constants
-var AUDITS_SCRIPT = path.join( __dirname, 'phantomjs', 'audits.js' );
-var CONFIG = '--config=' + path.join( __dirname, 'phantomjs', 'config.json' );
+var AUDITS_SCRIPT = path.join( __dirname, 'audits.js' );
 
 module.exports = function ( opts, cb ) {
     var argsForScript = [opts.url];
-    var subArgs = [CONFIG, AUDITS_SCRIPT].concat(argsForScript);
+    var subArgs = ['--ignore-ssl-errors=true', '--ssl-protocol=tlsv1', AUDITS_SCRIPT].concat(argsForScript);
     var out = "";
     var err = "";
     var cp;
@@ -47,10 +44,4 @@ module.exports = function ( opts, cb ) {
             cb({ code: errCode, message: err });
         }
     });
-
-    process.on( 'SIGTERM' , function() {
-        cp.kill('SIGTERM');
-        process.exit(1);
-    });
-
 };
