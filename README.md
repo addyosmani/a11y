@@ -1,9 +1,8 @@
-a11y
-===================
+# a11y
 
 [![Build Status](http://img.shields.io/travis/addyosmani/a11y/master.svg?style=flat)](https://travis-ci.org/addyosmani/a11y?style=flat) ![](http://img.shields.io/badge/unicorn-approved-ff69b4.svg?style=flat)
 
-Easy accessibility audits powered by the Chrome Accessibility Tools.
+> Easy accessibility audits powered by the Chrome Accessibility Tools.
 
 ![](http://i.imgur.com/4jHgzDL.png)
 
@@ -39,7 +38,7 @@ $ a11y --help
 Verbose mode:
 
 ```sh
-$ a11y <url> -f
+$ a11y <url> --verbose
 ```
 
 
@@ -48,7 +47,7 @@ $ a11y <url> -f
 ```js
 var a11y = require('a11y');
 
-a11y({ url: 'http://twitter.com' }, function (err, reports) {
+a11y('http://twitter.com', function (err, reports) {
     var output = JSON.parse(reports);
     var audit = output.audit; // a11y Formatted report
     var report = output.report; // DevTools Accessibility Audit formatted report

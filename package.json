@@ -28,10 +28,8 @@
   ],
   "dependencies": {
     "accessibility-developer-tools": "git://github.com/GoogleChrome/accessibility-developer-tools",
-    "chalk": "^0.5.1",
     "log-symbols": "^1.0.1",
-    "minimist": "^1.1.0",
-    "nopt": "^3.0.1",
+    "meow": "^1.0.0",
     "phantomjs": "^1.9.10"
   },
   "devDependencies": {}

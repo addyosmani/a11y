@@ -72,12 +72,12 @@ function auditHandler( status ) {
         console.log( 'Unable to load ' + url + ' successfully' );
         phantom.exit( 1 );
     }
-};
+}
 
 // Validate input and open page for auditing
-if ( system.args.length !== 2 ) {
-    console.log( 'Please pass a valid URL for auditing' );
-    phantom.exit( 1 );
+if (system.args.length !== 2) {
+    console.log('Please pass a valid URL for auditing');
+    phantom.exit(1);
 } else {
     var url = system.args[1];
     webpage.open( url, auditHandler );
