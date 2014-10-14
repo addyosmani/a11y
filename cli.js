@@ -2,6 +2,7 @@
 'use strict';
 var logSymbols = require('log-symbols');
 var meow = require('meow');
+var updateNotifier = require('update-notifier');
 var a11y = require('./');
 
 var cli = meow({
@@ -13,6 +14,11 @@ var cli = meow({
         '  --verbose    Displays more information'
     ].join('\n')
 });
+
+updateNotifier({
+    packageName: cli.pkg.name,
+    packageVersion: cli.pkg.version
+}).notify();
 
 a11y(cli.input[0], cli.flags, function (err, reports) {
     if (err) {
