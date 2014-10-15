@@ -28,6 +28,18 @@ $ a11y <url>
 
 ![](http://i.imgur.com/52cHKKE.png)
 
+Also works fine against localhost:
+
+```sh
+$ a11y http://localhost:9000
+```
+
+and local files:
+
+```sh
+$ a11y index.html
+```
+
 Query help:
 
 ```sh
