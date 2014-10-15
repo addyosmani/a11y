@@ -3,9 +3,20 @@
  */
 var system = require('system');
 var webpage = require('webpage').create();
-var url = system.args[1];
+var opts = JSON.parse(system.args[1]);
 var PAGE_TIMEOUT = 9000;
 var TOOLS_PATH = 'node_modules/accessibility-developer-tools/dist/js/axs_testing.js';
+
+function formatTrace(trace) {
+    var src = trace.file || trace.sourceURL;
+    var fn = (trace.function ? ' in function ' + trace.function : '');
+    return '→ ' + src + ' on line ' + trace.line + fn;
+}
+
+// console.error is broken in PhantomJS
+console.error = function () {
+    system.stderr.writeLine([].slice.call(arguments).join(' '));
+};
 
 webpage.settings.resourceTimeout = PAGE_TIMEOUT;
 
@@ -14,7 +25,11 @@ webpage.onResourceTimeout = function (err) {
     phantom.exit(1);
 };
 
-webpage.open(url, function (status) {
+webpage.onError = opts.verbose ? function (err, trace) {
+    console.error(err + '\n' + formatTrace(trace[0]) + '\n');
+} : function () {};
+
+webpage.open(opts.url, function (status) {
     if (status === 'fail') {
         console.error('Couldn\'t load url: ' + url);
         phantom.exit(1);
@@ -60,6 +75,12 @@ webpage.open(url, function (status) {
             report: axs.Audit.createReport(results)
         };
     });
+
+    if (!ret) {
+        system.stderr.writeLine('Audit failed');
+        phantom.exit(1);
+        return;
+    }
 
     console.log(JSON.stringify(ret));
     phantom.exit();

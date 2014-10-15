@@ -24,7 +24,6 @@ a11y(cli.input[0], cli.flags, function (err, reports) {
     if (err) {
         console.error(err.message);
         process.exit(err.code || 1);
-        return;
     }
 
     if (cli.flags.verbose === true) {
