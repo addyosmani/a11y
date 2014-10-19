@@ -40,6 +40,8 @@ and local files:
 $ a11y index.html
 ```
 
+![](http://i.imgur.com/1m3pi78.png)
+
 Query help:
 
 ```sh
