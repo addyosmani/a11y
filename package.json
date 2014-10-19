@@ -32,7 +32,9 @@
     "meow": "^1.0.0",
     "object-assign": "^1.0.0",
     "phantomjs": "^1.9.10",
-    "update-notifier": "^0.2.2"
+    "update-notifier": "^0.2.2",
+    "each-async": "~1.1.0",
+    "chalk": "~0.5.1"
   },
   "devDependencies": {
     "ava": "0.0.4"

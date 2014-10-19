@@ -3,6 +3,8 @@
 var logSymbols = require('log-symbols');
 var meow = require('meow');
 var updateNotifier = require('update-notifier');
+var each = require('each-async');
+var chalk = require('chalk');
 var a11y = require('./');
 
 var cli = meow({
@@ -20,31 +22,33 @@ updateNotifier({
     packageVersion: cli.pkg.version
 }).notify();
 
-a11y(cli.input[0], cli.flags, function (err, reports) {
-    if (err) {
-        console.error(err.message);
-        process.exit(err.code || 1);
-    }
+each(cli.input, function(url){
+  a11y(url, cli.flags, function (err, reports) {
+      if (err) {
+          console.error(err.message);
+          process.exit(err.code || 1);
+      }
 
-    if (cli.flags.verbose === true) {
-        console.log(reports);
-    } else {
-        var passes = '';
-        var failures = '';
+      if (cli.flags.verbose === true) {
+          console.log(reports);
+      } else {
+          var passes = '';
+          var failures = '';
 
-        reports.audit.forEach(function (el) {
-            if (el.result === 'PASS') {
-                passes += logSymbols.success + ' ' + el.heading + '\n';
-            }
+          console.log(chalk.green('\nReport for ' + url));
+          reports.audit.forEach(function (el) {
+              if (el.result === 'PASS') {
+                  passes += logSymbols.success + ' ' + el.heading + '\n';
+              }
 
-            if (el.result === 'FAIL') {
-                failures += logSymbols.error + ' ' + el.heading + '\n';
-                failures += el.elements + '\n\n';
-            }
+              if (el.result === 'FAIL') {
+                  failures += logSymbols.error + ' ' + el.heading + '\n';
+                  failures += el.elements + '\n\n';
+              }
+          });
 
-        });
-
-        console.log(failures);
-        console.log(passes);
-    }
+          console.log(failures);
+          console.log(passes);
+      }
+  });
 });

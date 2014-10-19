@@ -24,6 +24,12 @@ Run an audit against a URL:
 $ a11y <url>
 ```
 
+Run against multiple URLs:
+
+```sh
+$ a11y index.html about.html
+```
+
 ## Example
 
 ![](http://i.imgur.com/52cHKKE.png)
