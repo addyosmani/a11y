@@ -81,3 +81,20 @@ a11y('http://twitter.com', flags, function (err, reports) {
     var report = output.report; // DevTools Accessibility Audit formatted report
 });
 ```
+
+Working with the output of an `audit`:
+
+```js
+var a11y = require('a11y');
+
+a11y('http://twitter.com', flags, function (err, reports) {
+    reports.audit.forEach(function (el) {
+        // result will be PASS or FAIL
+        if (el.result === 'FAIL') {
+            // el.heading
+            // el.severity
+            // el.elements
+        }
+    });
+});
+```
