@@ -5,20 +5,28 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Desktop" sketch:type="MSArtboardGroup" transform="translate(-183.000000, -330.000000)">
-            <ellipse id="Oval-3" fill="#F8C000" sketch:type="MSShapeGroup" cx="333" cy="429.5" rx="8" ry="7.5"></ellipse>
-            <ellipse id="Oval-7" fill="#529BF7" sketch:type="MSShapeGroup" cx="263" cy="423.5" rx="8" ry="7.5"></ellipse>
-            <ellipse id="Oval-12" fill="#529BF7" sketch:type="MSShapeGroup" cx="227" cy="407.5" rx="8" ry="7.5"></ellipse>
-            <ellipse id="Oval-9" fill="#00AA6C" sketch:type="MSShapeGroup" cx="367" cy="361.5" rx="8" ry="7.5"></ellipse>
-            <ellipse id="Oval-10" fill="#00AA6C" sketch:type="MSShapeGroup" cx="437" cy="361.5" rx="8" ry="7.5"></ellipse>
-            <ellipse id="Oval-11" fill="#00AA6C" sketch:type="MSShapeGroup" cx="401" cy="431.5" rx="8" ry="7.5"></ellipse>
-            <ellipse id="Oval-8" fill="#529BF7" sketch:type="MSShapeGroup" cx="192" cy="423.5" rx="8" ry="7.5"></ellipse>
-            <ellipse id="Oval-4" fill="#F8C000" sketch:type="MSShapeGroup" cx="333" cy="341.5" rx="8" ry="7.5"></ellipse>
-            <ellipse id="Oval-5" fill="#E55B46" sketch:type="MSShapeGroup" cx="298" cy="429.5" rx="8" ry="7.5"></ellipse>
-            <ellipse id="Oval-6" fill="#E55B46" sketch:type="MSShapeGroup" cx="298" cy="341.5" rx="8" ry="7.5"></ellipse>
-            <text id="a11y" sketch:type="MSTextLayer" font-family="Celestial" font-size="144" font-weight="normal" fill="#4A4A4A">
-                <tspan x="184" y="440">a11y</tspan>
-            </text>
+        <g id="Desktop" sketch:type="MSArtboardGroup" transform="translate(-177.000000, -330.000000)">
+            <g id="logo" sketch:type="MSLayerGroup" transform="translate(178.000000, 282.000000)">
+                <ellipse id="Oval-3" fill="#F8C000" sketch:type="MSShapeGroup" cx="149" cy="147.5" rx="8" ry="7.5"></ellipse>
+                <ellipse id="Oval-7" fill="#529BF7" sketch:type="MSShapeGroup" cx="79" cy="141.5" rx="8" ry="7.5"></ellipse>
+                <path d="M14.5,126.5 L72.5,126.5" id="Line" stroke="#4A4A4A" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <ellipse id="Oval-12" fill="#529BF7" sketch:type="MSShapeGroup" cx="43" cy="125.5" rx="8" ry="7.5"></ellipse>
+                <ellipse id="Oval-9" fill="#00AA6C" sketch:type="MSShapeGroup" cx="183" cy="79.5" rx="8" ry="7.5"></ellipse>
+                <ellipse id="Oval-10" fill="#00AA6C" sketch:type="MSShapeGroup" cx="253" cy="79.5" rx="8" ry="7.5"></ellipse>
+                <ellipse id="Oval-11" fill="#00AA6C" sketch:type="MSShapeGroup" cx="217" cy="149.5" rx="8" ry="7.5"></ellipse>
+                <ellipse id="Oval-8" fill="#529BF7" sketch:type="MSShapeGroup" cx="8" cy="141.5" rx="8" ry="7.5"></ellipse>
+                <ellipse id="Oval-4" fill="#F8C000" sketch:type="MSShapeGroup" cx="149" cy="59.5" rx="8" ry="7.5"></ellipse>
+                <ellipse id="Oval-5" fill="#E55B46" sketch:type="MSShapeGroup" cx="114" cy="147.5" rx="8" ry="7.5"></ellipse>
+                <ellipse id="Oval-6" fill="#E55B46" sketch:type="MSShapeGroup" cx="114" cy="59.5" rx="8" ry="7.5"></ellipse>
+                <text id="a11y" sketch:type="MSTextLayer" font-family="Celestial" font-size="144" font-weight="normal" fill="#4A4A4A">
+                    <tspan x="0" y="158">a11y</tspan>
+                </text>
+            </g>
+            <g id="logo-2" sketch:type="MSLayerGroup" transform="translate(184.000000, 419.000000)" font-size="144" font-family="Celestial" fill="#4A4A4A" font-weight="normal">
+                <text id="a11y" sketch:type="MSTextLayer">
+                    <tspan x="0" y="158">a11y</tspan>
+                </text>
+            </g>
         </g>
     </g>
 </svg>
