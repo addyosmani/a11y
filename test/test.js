@@ -28,7 +28,15 @@ test('fail if no no callback is supplied', function (t) {
   }
 });
 
-test('test local input generates a report', function (t) {
+test('test local input generates a report if callback is second param', function (t) {
+  t.plan(2);
+  var a11y = new A11y('fixture.html', function (err, reports) {
+    t.assert(reports.audit[1].heading === 'ARIA state and property values must be valid');
+    t.assert(reports.audit[1].result === 'FAIL');
+  });
+});
+
+test('test local input generates a report if callback is third param', function (t) {
   t.plan(2);
   var a11y = new A11y('fixture.html', null, function (err, reports) {
     t.assert(reports.audit[1].heading === 'ARIA state and property values must be valid');
