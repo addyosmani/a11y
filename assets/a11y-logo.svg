@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="263px" height="110px" viewBox="0 0 263 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1 (8751) - http://www.bohemiancoding.com/sketch -->
+    <title>Desktop</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop" sketch:type="MSArtboardGroup" transform="translate(-183.000000, -330.000000)">
+            <ellipse id="Oval-3" fill="#F8C000" sketch:type="MSShapeGroup" cx="333" cy="429.5" rx="8" ry="7.5"></ellipse>
+            <ellipse id="Oval-7" fill="#529BF7" sketch:type="MSShapeGroup" cx="263" cy="423.5" rx="8" ry="7.5"></ellipse>
+            <ellipse id="Oval-12" fill="#529BF7" sketch:type="MSShapeGroup" cx="227" cy="407.5" rx="8" ry="7.5"></ellipse>
+            <ellipse id="Oval-9" fill="#00AA6C" sketch:type="MSShapeGroup" cx="367" cy="361.5" rx="8" ry="7.5"></ellipse>
+            <ellipse id="Oval-10" fill="#00AA6C" sketch:type="MSShapeGroup" cx="437" cy="361.5" rx="8" ry="7.5"></ellipse>
+            <ellipse id="Oval-11" fill="#00AA6C" sketch:type="MSShapeGroup" cx="401" cy="431.5" rx="8" ry="7.5"></ellipse>
+            <ellipse id="Oval-8" fill="#529BF7" sketch:type="MSShapeGroup" cx="192" cy="423.5" rx="8" ry="7.5"></ellipse>
+            <ellipse id="Oval-4" fill="#F8C000" sketch:type="MSShapeGroup" cx="333" cy="341.5" rx="8" ry="7.5"></ellipse>
+            <ellipse id="Oval-5" fill="#E55B46" sketch:type="MSShapeGroup" cx="298" cy="429.5" rx="8" ry="7.5"></ellipse>
+            <ellipse id="Oval-6" fill="#E55B46" sketch:type="MSShapeGroup" cx="298" cy="341.5" rx="8" ry="7.5"></ellipse>
+            <text id="a11y" sketch:type="MSTextLayer" font-family="Celestial" font-size="144" font-weight="normal" fill="#4A4A4A">
+                <tspan x="184" y="440">a11y</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
