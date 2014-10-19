@@ -10,6 +10,11 @@ module.exports = function (url, opts, cb) {
         opts = {};
     }
 
+    if (!url.length > 0) {
+      cb('Error: please supply a valid URL as input');
+      return;
+    }
+
     opts = objectAssign({}, opts, {url: url});
 
     execFile(phantomjs.path, [
