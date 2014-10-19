@@ -60,6 +60,8 @@ $ a11y <url> > audit.txt
 
 ## Module usage
 
+Audit a remote URL and generate an accessibility report:
+
 ```js
 var a11y = require('a11y');
 
@@ -67,6 +69,23 @@ a11y('http://twitter.com', function (err, reports) {
     var output = JSON.parse(reports);
     var audit = output.audit; // a11y Formatted report
     var report = output.report; // DevTools Accessibility Audit formatted report
+});
+```
+
+Work with the output of `reports.audit`:
+
+```js
+var a11y = require('a11y');
+
+a11y('http://twitter.com', function (err, reports) {
+    reports.audit.forEach(function (el) {
+        // result will be PASS or FAIL
+        if (el.result === 'FAIL') {
+            // el.heading
+            // el.severity
+            // el.elements
+        }
+    });
 });
 ```
 
@@ -79,22 +98,5 @@ a11y('http://twitter.com', flags, function (err, reports) {
     var output = JSON.parse(reports);
     var audit = output.audit; // a11y Formatted report
     var report = output.report; // DevTools Accessibility Audit formatted report
-});
-```
-
-Working with the output of an `audit`:
-
-```js
-var a11y = require('a11y');
-
-a11y('http://twitter.com', flags, function (err, reports) {
-    reports.audit.forEach(function (el) {
-        // result will be PASS or FAIL
-        if (el.result === 'FAIL') {
-            // el.heading
-            // el.severity
-            // el.elements
-        }
-    });
 });
 ```
