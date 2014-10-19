@@ -55,7 +55,7 @@ $ a11y <url> --verbose
 Write audit to file:
 
 ```sh
-$ a11y <url> >> audit.txt
+$ a11y <url> > audit.txt
 ```
 
 ## Module usage
