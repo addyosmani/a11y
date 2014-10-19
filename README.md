@@ -1,4 +1,4 @@
-# a11y
+<img width="400px" src="https://cloud.githubusercontent.com/assets/110953/4694048/e8bf502e-57b9-11e4-8e31-4a97ef94cd1e.png"/>
 
 [![Build Status](http://img.shields.io/travis/addyosmani/a11y/master.svg?style=flat)](https://travis-ci.org/addyosmani/a11y?style=flat) ![](http://img.shields.io/badge/unicorn-approved-ff69b4.svg?style=flat)
 
