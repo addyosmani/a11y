@@ -11,7 +11,7 @@ module.exports = function (url, opts, cb) {
     }
 
     if (!url.length > 0) {
-      cb('Error: please supply a valid URL as input');
+      throw new Error('Please supply a valid URL as input');
       return;
     }
 
