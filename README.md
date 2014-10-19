@@ -91,18 +91,6 @@ a11y('http://twitter.com', function (err, reports) {
 });
 ```
 
-Optionally pass in flags to PhantomJS as an object:
-
-```js
-var a11y = require('a11y');
-
-a11y('http://twitter.com', flags, function (err, reports) {
-    var output = JSON.parse(reports);
-    var audit = output.audit; // a11y Formatted report
-    var report = output.report; // DevTools Accessibility Audit formatted report
-});
-```
-
 ## Interpreting results
 
 Per the Accessibility Developer Tools, the results in an audit may be one of three
