@@ -12,7 +12,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "node test/test.js",
     "demo": "node cli.js http://theverge.com"
   },
   "files": [
@@ -34,5 +34,7 @@
     "phantomjs": "^1.9.10",
     "update-notifier": "^0.2.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "ava": "0.0.4"
+  }
 }
