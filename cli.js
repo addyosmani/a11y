@@ -26,25 +26,26 @@ a11y(cli.input[0], cli.flags, function (err, reports) {
         process.exit(err.code || 1);
     }
 
-    if (cli.flags.verbose === true) {
+    if (cli.flags.verbose) {
         console.log(reports);
-    } else {
-        var passes = '';
-        var failures = '';
-
-        reports.audit.forEach(function (el) {
-            if (el.result === 'PASS') {
-                passes += logSymbols.success + ' ' + el.heading + '\n';
-            }
-
-            if (el.result === 'FAIL') {
-                failures += logSymbols.error + ' ' + el.heading + '\n';
-                failures += el.elements + '\n\n';
-            }
-
-        });
-
-        console.log(failures);
-        console.log(passes);
+        return;
     }
+
+    var passes = '';
+    var failures = '';
+
+    reports.audit.forEach(function (el) {
+        if (el.result === 'PASS') {
+            passes += logSymbols.success + ' ' + el.heading + '\n';
+        }
+
+        if (el.result === 'FAIL') {
+            failures += logSymbols.error + ' ' + el.heading + '\n';
+            failures += el.elements + '\n\n';
+        }
+
+    });
+
+    console.log(failures);
+    console.log(passes);
 });
