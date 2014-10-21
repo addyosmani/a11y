@@ -29,7 +29,7 @@
   "dependencies": {
     "accessibility-developer-tools": "git://github.com/GoogleChrome/accessibility-developer-tools",
     "log-symbols": "^1.0.1",
-    "meow": "^1.0.0",
+    "meow": "^2.0.0",
     "object-assign": "^1.0.0",
     "phantomjs": "^1.9.10",
     "update-notifier": "^0.2.2"
