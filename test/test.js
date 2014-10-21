@@ -18,7 +18,7 @@ test('test that an empty URL fails', function (t) {
       // ...
     });
   } catch (e) {
-    t.assert(e.toString().indexOf('Please supply a valid URL as input') > -1);
+    t.assert(e.toString().indexOf('Please supply a valid URL') > -1);
   }
 });
 
@@ -27,7 +27,7 @@ test('fail if no callback is supplied', function (t) {
   try {
     var a11y = A11y('', null);
   } catch (e) {
-    t.assert(e.toString().indexOf('Error: Please supply a valid URL as input') > -1);
+    t.assert(e.toString().indexOf('Error: Please supply a valid URL') > -1);
   }
 });
 

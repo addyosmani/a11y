@@ -10,8 +10,8 @@ module.exports = function (url, opts, cb) {
         opts = {};
     }
 
-    if (!url.length > 0) {
-      throw new Error('Please supply a valid URL as input');
+    if (!url || !url.length > 0) {
+      throw new Error('Please supply a valid URL');
       return;
     }
 
