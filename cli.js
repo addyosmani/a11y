@@ -10,6 +10,10 @@ var cli = meow({
         'Usage',
         '  a11y <url>',
         '',
+        'Example',
+        '  a11y http://todomvc.com',
+        '  a11y index.html',
+        '',
         'Options',
         '  --verbose    Displays more information'
     ].join('\n')
