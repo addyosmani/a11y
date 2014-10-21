@@ -10,9 +10,12 @@ module.exports = function (url, opts, cb) {
         opts = {};
     }
 
+    if (typeof cb !== 'function') {
+        throw new Error('Callback required');
+    }
+
     if (!url || !url.length > 0) {
-      throw new Error('Please supply a valid URL');
-      return;
+        throw new Error('Please supply a valid URL');
     }
 
     opts = objectAssign({}, opts, {url: url});
