@@ -16,6 +16,7 @@ var cli = meow({
         '',
         'Example',
         '  a11y http://todomvc.com',
+        '  a11y http://todomvc.com http://chrome.com',
         '  a11y index.html',
         '',
         'Options',
