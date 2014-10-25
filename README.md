@@ -24,6 +24,12 @@ Run an audit against a URL:
 $ a11y <url>
 ```
 
+or multiple URLs:
+
+```sh
+$ a11y http://todomvc.com http://chrome.com
+```
+
 ## Example
 
 ![](http://i.imgur.com/52cHKKE.png)

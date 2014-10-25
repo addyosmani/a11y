@@ -35,6 +35,9 @@
     "update-notifier": "^0.2.2"
   },
   "devDependencies": {
-    "ava": "0.0.4"
+    "ava": "0.0.4",
+    "chalk": "^0.5.1",
+    "each-async": "^1.1.0",
+    "indent-string": "^1.2.0"
   }
 }
