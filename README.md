@@ -4,7 +4,7 @@
 
 > Easy accessibility audits powered by the Chrome Accessibility Tools.
 
-![](http://i.imgur.com/W3cfB0R.png)
+![](http://i.imgur.com/4BljBqv.png)
 
 
 ## Install
