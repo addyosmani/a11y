@@ -27,7 +27,7 @@
     "a11y"
   ],
   "dependencies": {
-    "accessibility-developer-tools": "git://github.com/GoogleChrome/accessibility-developer-tools",
+    "accessibility-developer-tools": "GoogleChrome/accessibility-developer-tools#416911f33f166777293c3402f881ed58ea3ce45a",
     "log-symbols": "^1.0.1",
     "meow": "^2.0.0",
     "object-assign": "^1.0.0",
