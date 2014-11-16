@@ -3,6 +3,7 @@ var path = require('path');
 var execFile = require('child_process').execFile;
 var phantomjs = require('phantomjs');
 var objectAssign = require('object-assign');
+var protocolify = require('protocolify');
 
 module.exports = function (url, opts, cb) {
     if (typeof opts !== 'object') {
@@ -18,6 +19,7 @@ module.exports = function (url, opts, cb) {
         throw new Error('Please supply a valid URL');
     }
 
+    url = protocolify(url);
     opts = objectAssign({}, opts, {url: url});
 
     execFile(phantomjs.path, [
