@@ -20,7 +20,7 @@ module.exports = function (url, opts, cb) {
     }
 
     url = protocolify(url);
-    if (opts.viewportSize) {
+    if (opts && opts.viewportSize) {
         var viewportSize = opts.viewportSize;
         delete opts.viewportSize
         opts = objectAssign({}, opts, {url: url, width: viewportSize.split('x')[0], height: viewportSize.split('x')[1]});
