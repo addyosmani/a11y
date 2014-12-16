@@ -35,10 +35,10 @@
     "protocolify": "^1.0.0",
     "update-notifier": "^0.2.2",
     "chalk": "^0.5.1",
+    "indent-string": "^1.2.0",
     "each-async": "^1.1.0"
   },
   "devDependencies": {
-    "ava": "0.0.4",
-    "indent-string": "^1.2.0"
+    "ava": "0.0.4"
   }
 }
