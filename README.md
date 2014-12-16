@@ -2,7 +2,7 @@
 
 [![Build Status](http://img.shields.io/travis/addyosmani/a11y/master.svg?style=flat)](https://travis-ci.org/addyosmani/a11y?style=flat) ![](http://img.shields.io/badge/unicorn-approved-ff69b4.svg?style=flat)
 
-> Easy accessibility audits powered by the Chrome Accessibility Tools.
+> Easy accessibility audits powered by the [Chrome Accessibility Tools](https://www.npmjs.com/package/accessibility-developer-tools).
 
 ![](http://i.imgur.com/4BljBqv.png)
 
