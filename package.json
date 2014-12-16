@@ -2,7 +2,7 @@
   "name": "a11y",
   "version": "0.1.2",
   "description": "Runs an accessibility audit against a URL",
-  "license": "BSD",
+  "license": "Apache-2",
   "repository": "addyosmani/a11y",
   "author": "Addy Osmani",
   "bin": {
