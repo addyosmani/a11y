@@ -32,7 +32,7 @@ $ a11y http://todomvc.com http://chrome.com
 
 ## Example
 
-![](http://i.imgur.com/52cHKKE.png)
+![](http://i.imgur.com/NBaz6qe.png)
 
 Also works fine against localhost:
 
