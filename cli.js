@@ -20,7 +20,8 @@ var cli = meow({
         '  a11y index.html',
         '',
         'Options',
-        '  --verbose    Displays more information'
+        '  --verbose                Displays more information',
+        '  --viewportSize=1024x768  Sets the viewport size'
     ].join('\n')
 });
 

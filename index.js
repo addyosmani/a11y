@@ -20,7 +20,14 @@ module.exports = function (url, opts, cb) {
     }
 
     url = protocolify(url);
-    opts = objectAssign({}, opts, {url: url});
+    if (opts.viewportSize) {
+        var viewportSize = opts.viewportSize;
+        delete opts.viewportSize
+        opts = objectAssign({}, opts, {url: url, width: viewportSize.split('x')[0], height: viewportSize.split('x')[1]});
+    }
+    else {
+        opts = objectAssign({}, opts, {url: url});
+    }
 
     execFile(phantomjs.path, [
         path.join(__dirname, 'audits.js'),
