@@ -21,8 +21,8 @@ console.error = function () {
 webpage.settings.resourceTimeout = PAGE_TIMEOUT;
 
 webpage.viewportSize = {
-    width: opts.width || 1024,
-    height: opts.height || 768
+    width: opts.width,
+    height: opts.height
 };
 
 webpage.onResourceTimeout = function (err) {
