@@ -20,6 +20,11 @@ console.error = function () {
 
 webpage.settings.resourceTimeout = PAGE_TIMEOUT;
 
+webpage.viewportSize = {
+    width: opts.width,
+    height: opts.height
+};
+
 webpage.onResourceTimeout = function (err) {
     console.log('Error code:' +  err.errorCode + ' ' + err.errorString + ' for ' + err.url);
     phantom.exit(1);
