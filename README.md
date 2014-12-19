@@ -110,8 +110,9 @@ a11y('twitter.com', function (err, reports) {
 
 ## Interpreting results
 
-Per the Accessibility Developer Tools, the results in an audit may be one of three
-constants:
+To interpret how to fix individual issues in an audit, see the [Audit Rules](https://github.com/GoogleChrome/accessibility-developer-tools/wiki/Audit-Rules) section of the Accessibility Developer Tools project.
+
+Per the Accessibility Developer Tools, the results in an audit may be one of three types:
 
 * `PASS` - implies that there were elements on the page that may potentially have failed this audit rule, but they passed. Congratulations!
 * `FAIL` - This implies that there were elements on the page that did not pass this audit rule. This is the only result you will probably be interested in.
