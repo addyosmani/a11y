@@ -49,10 +49,18 @@ $ a11y index.html
 
 ![](http://i.imgur.com/1m3pi78.png)
 
+## Options
+
 Query help:
 
 ```sh
 $ a11y --help
+```
+
+Customise viewport size:
+
+```sh
+$ a11y --viewport-size=800x600
 ```
 
 Verbose mode:
