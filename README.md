@@ -1,4 +1,4 @@
-<img width="400px" src="https://cloud.githubusercontent.com/assets/110953/4694241/3ddba98e-57c1-11e4-852a-dc0940345a89.png"/>
+<img width="400px" src="https://cloud.githubusercontent.com/assets/110953/4694241/3ddba98e-57c1-11e4-852a-dc0940345a89.png">
 
 [![Build Status](http://img.shields.io/travis/addyosmani/a11y/master.svg?style=flat)](https://travis-ci.org/addyosmani/a11y?style=flat) ![](http://img.shields.io/badge/unicorn-approved-ff69b4.svg?style=flat)
 
@@ -21,14 +21,15 @@ $ npm install -g a11y
 Run an audit against a URL:
 
 ```sh
-$ a11y <url>
+$ a11y todomvc.com
 ```
 
 or multiple URLs:
 
 ```sh
-$ a11y http://todomvc.com http://chrome.com
+$ a11y http://todomvc.com https://google.com
 ```
+
 
 ## Example
 
@@ -37,7 +38,7 @@ $ a11y http://todomvc.com http://chrome.com
 Also works fine against localhost:
 
 ```sh
-$ a11y http://localhost:9000
+$ a11y localhost:9000
 ```
 
 and local files:
@@ -66,6 +67,7 @@ Write audit to file:
 $ a11y <url> > audit.txt
 ```
 
+
 ## Module usage
 
 Audit a remote URL and generate an accessibility report:
@@ -73,7 +75,7 @@ Audit a remote URL and generate an accessibility report:
 ```js
 var a11y = require('a11y');
 
-a11y('http://twitter.com', function (err, reports) {
+a11y('twitter.com', function (err, reports) {
     var output = JSON.parse(reports);
     var audit = output.audit; // a11y Formatted report
     var report = output.report; // DevTools Accessibility Audit formatted report
@@ -85,7 +87,7 @@ Work with the output of `reports.audit`:
 ```js
 var a11y = require('a11y');
 
-a11y('http://twitter.com', function (err, reports) {
+a11y('twitter.com', function (err, reports) {
     reports.audit.forEach(function (el) {
         // result will be PASS, FAIL or NA
         if (el.result === 'FAIL') {
@@ -97,6 +99,7 @@ a11y('http://twitter.com', function (err, reports) {
 });
 ```
 
+
 ## Interpreting results
 
 Per the Accessibility Developer Tools, the results in an audit may be one of three
@@ -106,6 +109,7 @@ constants:
 * FAIL - This implies that there were elements on the page that did not pass this audit rule. This is the only result you will probably be interested in.
 * NA - This implies that there were no elements on the page that may potentially have failed this audit rule. For example, an audit rule that checks video elements for subtitles would return this result if there were no video elements on the page.
 
+
 ## License
 
-Apache-2. 
+Apache-2.0
