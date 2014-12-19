@@ -15,12 +15,12 @@ var cli = meow({
         '  a11y <url>',
         '',
         'Example',
-        '  a11y http://todomvc.com',
-        '  a11y http://todomvc.com http://chrome.com',
+        '  a11y todomvc.com',
+        '  a11y http://todomvc.com https://google.com',
         '  a11y index.html',
         '',
         'Options',
-        '  --verbose                Displays more information',
+        '  --verbose                 Displays more information',
         '  --viewport-size=1024x768  Sets the viewport size'
     ].join('\n')
 });
