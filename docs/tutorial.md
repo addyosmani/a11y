@@ -26,25 +26,25 @@ Each numeric entry can be clicked to display more information about the problem 
 
 ## Examples
 
- ### Example 1: Home page
+### Example 1: Home page
 
  [Before](http://www.w3.org/WAI/demos/bad/before/home.html)
 
  [After](http://www.w3.org/WAI/demos/bad/after/home.html)
 
- ### Example 2: News page
+### Example 2: News page
 
  [Before](http://www.w3.org/WAI/demos/bad/before/news.html)
 
  [After](http://www.w3.org/WAI/demos/bad/after/news.html)
 
- ### Example 3: Tickets page
+### Example 3: Tickets page
 
  [Before](http://www.w3.org/WAI/demos/bad/before/tickets.html)
 
  [After](http://www.w3.org/WAI/demos/bad/after/tickets.html)
 
- ### Example 4: Survey page
+### Example 4: Survey page
 
  [Before](http://www.w3.org/WAI/demos/bad/before/survey.html)
 
