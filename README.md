@@ -105,9 +105,9 @@ a11y('twitter.com', function (err, reports) {
 Per the Accessibility Developer Tools, the results in an audit may be one of three
 constants:
 
-* PASS - implies that there were elements on the page that may potentially have failed this audit rule, but they passed. Congratulations!
-* FAIL - This implies that there were elements on the page that did not pass this audit rule. This is the only result you will probably be interested in.
-* NA - This implies that there were no elements on the page that may potentially have failed this audit rule. For example, an audit rule that checks video elements for subtitles would return this result if there were no video elements on the page.
+* `PASS` - implies that there were elements on the page that may potentially have failed this audit rule, but they passed. Congratulations!
+* `FAIL` - This implies that there were elements on the page that did not pass this audit rule. This is the only result you will probably be interested in.
+* `NA` - This implies that there were no elements on the page that may potentially have failed this audit rule. For example, an audit rule that checks video elements for subtitles would return this result if there were no video elements on the page.
 
 
 ## License
