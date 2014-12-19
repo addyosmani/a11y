@@ -11,6 +11,8 @@ module.exports = function (url, opts, cb) {
         opts = {};
     }
 
+    opts = opts || {};
+
     if (typeof cb !== 'function') {
         throw new Error('Callback required');
     }
@@ -19,21 +21,14 @@ module.exports = function (url, opts, cb) {
         throw new Error('Please supply a valid URL');
     }
 
-    var viewportSize = {
-      width: 1024,
-      height: 768
-    }
+    var viewportSize = (opts.viewportSize || '').split('x');
+    delete opts.viewportSize;
 
-    if (opts && opts.viewportSize) {
-        viewportSize = {
-          width: opts.viewportSize.split('x')[0],
-          height: opts.viewportSize.split('x')[1]
-        }
-        delete opts.viewportSize
-    }
-
-    url = protocolify(url);
-    opts = objectAssign({}, opts, {url: url}, viewportSize);
+    opts = objectAssign({}, opts, {
+        url: protocolify(url),
+        width: viewportSize[0] || 1024,
+        height: viewportSize[1] || 768
+    });
 
     execFile(phantomjs.path, [
         path.join(__dirname, 'audits.js'),
