@@ -5,66 +5,123 @@
  * Web Starter Kit team.
  *
  */
-
 /*
  * Visual Style Guide styles
  * Remove if you prefer to use a CSS library, like Bootstrap
  */
 
- @import "../styleguide/layout/layout";
-
+@import "../styleguide/layout/layout";
 body {
-  margin: 0px;
+    margin: 0px;
 }
-
-
 #transparent {
-  background-image: url('../images/hero-4.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center 40%;
-  width: 100%;
-  height: 540px;
+    background-image: url('../images/hero-4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center 40%;
+    width: 100%;
+    height: 540px;
 }
-
 #content {
-  padding: 20px;
-  background-color: #303F9F; /*#4CAF50*/;
-  color: white;
-  padding-top: 50px;
-  padding-bottom: 50px;
+    padding: 20px;
+    background-color: #303F9F;
+    /*#4CAF50*/
+    
+    ;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#content p {
+    color: #C5CAE9;
+    /*#DCEDC8*/
+    font-size: 1.57143em;
+    font-weight: 400;
+}
+#instructions {
+    padding: 20px;
+}
+#instructions h2 {
+    font-weight: 400;
+    color: #757575;
+    line-height: 1.3;
 }
 
+.wsk-layout__content h1 {
+    font-size: 2em;
+}
 
-#content p {
-  color: #C5CAE9; /*#DCEDC8*/;
-  font-size: 1.57143em;
-  font-weight: 400;
+.wsk-layout__content h2 {
+    font-size: 1.57143em;
+    font-weight: 300;
+    color: #C5CAE9;
 }
 
 .wsk-layout__header .wsk-navigation__link {
-	color: #212121;
+    color: #212121;
+}
+
+pre {
+    background: #F8F8F8;
+    color: #6D4BA0;
+}
+
+.preview {
+    display: inline-block;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.preview p {
+    max-width: 400px;
+}
+
+.preview h3 {
+    font-size: 1.57143em;
+    margin: 1em 0 .3em;
+    color: #757575;
+}
+
+#preview-audit img {
+    float:right;
+}
+
+#preview-success {
+    text-align: right;
+}
+
+#preview-success p {
+    float: right;
+}
+
+#preview-success img {
+    float:left;
 }
 
 .footer {
-background: #fff;
-font-size: .9em;
-padding: 16px 24px;
-margin-left: 0;
-margin-right: 0;
-text-align: center;
+    background: #fff;
+    font-size: .9em;
+    padding: 16px 24px;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
 }
-
 .footer ul {
-margin: 0;
-text-align: right;
-clear: none;
+    margin: 0;
+    text-align: right;
+    clear: none;
 }
-
 .footer li {
-display: inline;
-line-height: 2.19;
-list-style: none;
-margin: auto;
+    display: inline;
+    line-height: 2.19;
+    list-style: none;
+    margin: auto;
+}
+.footer a {
+    color: #666;
+    font-weight: 400;
+    text-transform: none;
+    text-decoration: none;
 }

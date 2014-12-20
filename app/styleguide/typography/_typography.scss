@@ -9,7 +9,7 @@
    widely available.
 */
 $preferred_font: 'RobotoDraft', 'Helvetica', 'Arial', sans-serif;
-$performance_font: 'Helvetica', 'Arial', sans-serif;
+$performance_font: $preferred_font; //'Helvetica', 'Arial', sans-serif;
 
 @mixin typo-preferred-font($usePreferred: true) {
   @if $usePreferred {

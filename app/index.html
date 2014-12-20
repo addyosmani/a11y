@@ -69,15 +69,41 @@
         <div id="transparent"></div>
         
         <section id="content">
-        <h2 id="hello">npm install -g a11y</h2>
-        <p>Easy accessibility audits powered by the Chrome Accessibility Developer Tools.</p>  
+        <h1 id="hello">npm install -g a11y</h1>
+        <h2>Easy accessibility audits powered by the Chrome Accessibility Developer Tools.</h2>  
+        </section>
+
+        <section id="instructions">
+
+        <section id="preview-audit" class="preview">
+        <h3>Audit where accessibility can be improved</h3>
+        <p>Run audits against local or remote URLs to return a list of accessibility improvements that can be made. We even point out the DOM elements responsible.</p>
+        <img src="images/screenshot-2.jpg" height="500px" alt="Output from the a11y CLI showing a report of BBC.com where a number of accessibility issues are displayed in the command-line terminal">
+        </section>
+
+        <section id="preview-success" class="preview">
+        <h3>Check an accessible baseline is met</h3>
+        <p>A baseline success report will indicate when you've passed our accessibility tests. Green ticks all around!</p>
+        <img src="images/screenshot-3.jpg" height="200px" alt="Success report from the a11y CLI showing checkmarks next to each of the accessibility areas the page does well in">
+        </section>
+
+        <h2 id="get-started">Install</h2>
+        <p>You will need <a href="nodejs.org">Node.js</a> in order to install and use a11y on your machine. Once installed, run the follwing one-liner at the command-line:</p>
+
+        <pre>$ npm install -g a11y</pre>
+
+        <p>PhantomJS, which is used for generating the screenshots, is installed automagically, but in some rare cases it might fail to and you'll get an Error: spawn EACCES error. <a href="http://phantomjs.org/download.html">Download PhantomJS</a> manually and reinstall a11y if that happens.</p>
+
+        <h2 id="usage">Usage</h2>
+
+        <p>Run an audit against a URL:</p>
+        <pre>$ a11y todomvc.com</pre>
+
+        <p>or multiple URLs:</p>
+        <pre>$ a11y todomvc.com https://google.com</pre>
 
         </section>
 
-        <h2 id="get-started">Usage</h2>
-        <p>Read how to <a href="http://developers.google.com/web/starter-kit">Get Started</a> or run the line below to try a11y on bbc.com.</p>
-
-        <p><pre>$ a11y bbc.com</pre></p>
         </main>     
       </div>
 
