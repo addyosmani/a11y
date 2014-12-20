@@ -1339,6 +1339,16 @@ pre {
 #preview-success img {
   float: left; }
 
+.split-container {
+  display: block; }
+  .split-container .split-right {
+    float: right;
+    width: 45%; }
+    .split-container .split-right img {
+      width: 100%; }
+  .split-container .split-left {
+    float: left; }
+
 /*Switching to the shadow used on the Cardboard site*/
 .wsk-layout__header--transparent.is-casting-shadow {
   box-shadow: 2px 4px 14px rgba(0, 0, 0, 0.05); }
@@ -1368,7 +1378,7 @@ pre {
   text-transform: none;
   text-decoration: none; }
 
-@media (min-width: 300px) and (max-width: 500px) {
+@media (min-width: 300px) and (max-width: 800px) {
   #transparent {
     background-position: 10% 40%;
     width: 100%;
@@ -1391,11 +1401,3 @@ pre {
     max-width: 100%;
     height: auto; }
  }
-
-.split-container {
-  display: block; }
-  .split-container .split-right {
-    float: right;
-    width: 45%; }
-  .split-container .split-left {
-    float: left; }
