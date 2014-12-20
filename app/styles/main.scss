@@ -26,9 +26,6 @@ body {
 #content {
     padding: 20px;
     background-color: #303F9F;
-    /*#4CAF50*/
-    
-    ;
     color: white;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -98,6 +95,10 @@ pre {
 
 #preview-success img {
     float:left;
+}
+
+.wsk-layout__header--transparent.is-casting-shadow {
+   box-shadow: 2px 4px 14px rgba(0,0,0,.05);
 }
 
 .footer {
