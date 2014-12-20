@@ -40,28 +40,26 @@
   
     <div class="wsk-layout wsk-js-layout">
       <div class="wsk-layout__header wsk-layout__header--transparent is-casting-shadow">
-
       <!-- remove transparent to return to old-->
         <!-- Title -->
         <span class="wsk-layout-title">
-          <img src="images/logo.png" height="40"  alt="">
+          <img src="images/logo.png" height="40"  alt="a11y - the accessibility CLI for Node">
         </span>
         <!-- Add spacer, to align navigation to the right -->
         <div class="wsk-layout-spacer"></div>
         <!-- Navigation -->
         <nav class="wsk-navigation">
-          <a class="wsk-navigation__link" href="">Install</a>
-          <a class="wsk-navigation__link" href="">GitHub</a>
-          <a class="wsk-navigation__link" href="">Issue Tracker</a>
+          <a class="wsk-navigation__link" href="#get-started">Install</a>
+          <a class="wsk-navigation__link" href="https://github.com/addyosmani/a11y">GitHub</a>
+          <a class="wsk-navigation__link" href="https://github.com/addyosmani/a11y/issues">Issue Tracker</a>
         </nav>
       </div>
       <div class="wsk-layout__drawer">
-        <span class="wsk-layout-title">a<strong>11</strong>y</span>
-        <div class="wsk-layout-spacer"></div>
+        <span class="wsk-layout-title">a11y</span>
         <nav class="wsk-navigation">
-          <a class="wsk-navigation__link" href="#hello">GitHub</a>
-          <a class="wsk-navigation__link" href="#get-started">Issue Tracker</a>
-          <a class="wsk-navigation__link" href="material-styleguide.html">Style Guide</a>
+          <a class="wsk-navigation__link" href="#get-started">Install</a>
+          <a class="wsk-navigation__link" href="https://github.com/addyosmani/a11y">GitHub</a>
+          <a class="wsk-navigation__link" href="material-styleguide.html">Issue Tracker</a>
         </nav>
       </div>
       <div class="wsk-layout__content">
@@ -69,14 +67,14 @@
         <div id="transparent"></div>
         
         <section id="content">
-        <h1 id="hello">npm install -g a11y</h1>
-        <h2>Easy accessibility audits powered by the Chrome Accessibility Developer Tools.</h2>  
+        <h1 id="hello">A11y Command-line Tools</h1>
+        <h2>Web accessibility audits powered by the <img src="images/chrome_48x48.png" class="wsk-icon-logo" height="48" width="48" alt="Chrome logo"> Chrome Accessibility Developer Tools.</h2>  
         </section>
 
         <section id="instructions">
 
         <section id="preview-audit" class="preview">
-        <h3>Audit where accessibility can be improved</h3>
+        <h3>Audit accessibility issues in your web pages</h3>
         <p>Run audits against local or remote URLs to return a list of accessibility improvements that can be made. We even point out the DOM elements responsible.</p>
         <img src="images/screenshot-2.jpg" height="500px" alt="Output from the a11y CLI showing a report of BBC.com where a number of accessibility issues are displayed in the command-line terminal">
         </section>
@@ -101,6 +99,17 @@
 
         <p>or multiple URLs:</p>
         <pre>$ a11y todomvc.com https://google.com</pre>
+
+        <h2 id="options">Options</h2>
+
+        <p>Query help</p>
+        <pre>$ a11y --help</pre>
+
+        <p>Customise viewport size</p>
+        <pre>$ a11y --viewport-size=800x600</pre>
+
+        <p>Write audit to file</p>
+        <pre>$ a11y url > audit.txt</pre>
 
         </section>
 

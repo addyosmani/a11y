@@ -718,6 +718,10 @@ dt {
 body {
   margin: 0px; }
 
+.wsk-icon-logo {
+  margin-bottom: -12px;
+  position: relative; }
+
 #transparent {
   background-image: url('../images/hero-4.jpg');
   background-size: cover;
@@ -725,7 +729,7 @@ body {
   background-attachment: scroll;
   background-position: center 40%;
   width: 100%;
-  height: 540px; }
+  height: 520px; }
 
 #content {
   padding: 20px;
@@ -746,7 +750,8 @@ body {
 #instructions h2 {
   font-weight: 400;
   color: #757575;
-  line-height: 1.3; }
+  line-height: 1.3;
+  padding-top: 50px; }
 
 .wsk-layout__content h1 {
   font-size: 2em; }
@@ -789,6 +794,7 @@ pre {
 #preview-success img {
   float: left; }
 
+/*Switching to the shadow used on the Cardboard site*/
 .wsk-layout__header--transparent.is-casting-shadow {
   box-shadow: 2px 4px 14px rgba(0, 0, 0, 0.05); }
 
@@ -816,3 +822,27 @@ pre {
   font-weight: 400;
   text-transform: none;
   text-decoration: none; }
+
+@media (min-width: 300px) and (max-width: 500px) {
+  #transparent {
+    background-position: 10% 40%;
+    width: 100%;
+    height: 200px; }
+
+  .wsk-layout__content h1 {
+    font-size: 1.5em; }
+
+  .wsk-layout__content h2 {
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.5em; }
+
+  .wsk-layout__content .wsk-icon-logo {
+    height: 24px;
+    width: 24px;
+    margin-bottom: -6px; }
+
+  .preview img {
+    max-width: 100%;
+    height: auto; }
+ }
