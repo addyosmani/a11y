@@ -11,6 +11,7 @@
  */
 
 @import "../styleguide/layout/layout";
+@import "../styleguide/button/button";
 body {
     margin: 0px;
 }
@@ -70,6 +71,8 @@ body {
 pre {
     background: #F8F8F8;
     color: #6D4BA0;
+    display: inline-block;
+    padding: 10px;
 }
 
 .preview {
@@ -164,3 +167,18 @@ pre {
         height: auto;
     }
 }
+
+
+.split-container {
+    display: block;
+
+    .split-right {
+        float:right;
+        width: 45%;
+    }
+
+    .split-left {
+        float: left;
+    }
+}
+

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="description" content="a11y - Web Accessibility Command-line Tools">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>a11y - Accessibility Audits For The Web</title>
 
@@ -12,13 +12,13 @@
 
     <!-- Fallback to homescreen for Chrome <39 on Android -->
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Web Starter Kit">
+    <meta name="application-name" content="a11y - Web Accessibility Command-line Tools">
     <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Web Starter Kit">
+    <meta name="apple-mobile-web-app-title" content="a11y - Web Accessibility Command-line Tools">
     <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
@@ -100,16 +100,25 @@
         <p>or multiple URLs:</p>
         <pre>$ a11y todomvc.com https://google.com</pre>
 
-        <h2 id="options">Options</h2>
+        
+        <div class="split-container">
+        <div class="split-left">
+          <h2 id="options">Options</h2>
 
-        <p>Query help</p>
-        <pre>$ a11y --help</pre>
+          <p>Query help</p>
+          <pre>$ a11y --help</pre>
 
-        <p>Customise viewport size</p>
-        <pre>$ a11y --viewport-size=800x600</pre>
+          <p>Customise viewport size</p>
+          <pre>$ a11y --viewport-size=800x600</pre>
 
-        <p>Write audit to file</p>
-        <pre>$ a11y url > audit.txt</pre>
+          <p>Write audit to file</p>
+          <pre>$ a11y url > audit.txt</pre>
+        </div>
+
+        <div class="split-right">
+          <img src="images/pastries_billy_witson.jpg" width="100%" alt="A selection of pastry options">
+        </div>
+        </div>
 
         </section>
 
@@ -140,6 +149,9 @@
     <!-- build:js(app/) ../../scripts/main.min.js -->
     <script src="scripts/main.js"></script>
     <script src="styleguide/layout/layout.js"></script>
+    <script src="styleguide/button/button.js"></script>
+    <script src="styleguide/ripple/ripple.js"></script>
+    <script src="styleguide/third_party/rAF.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
