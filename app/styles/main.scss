@@ -1,0 +1,70 @@
+/*
+ * Web Starter Kit
+ *
+ * Multi-screen layout styles for your page. Brought to you by the
+ * Web Starter Kit team.
+ *
+ */
+
+/*
+ * Visual Style Guide styles
+ * Remove if you prefer to use a CSS library, like Bootstrap
+ */
+
+ @import "../styleguide/layout/layout";
+
+body {
+  margin: 0px;
+}
+
+
+#transparent {
+  background-image: url('../images/hero-4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center 40%;
+  width: 100%;
+  height: 540px;
+}
+
+#content {
+  padding: 20px;
+  background-color: #303F9F; /*#4CAF50*/;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
+#content p {
+  color: #C5CAE9; /*#DCEDC8*/;
+  font-size: 1.57143em;
+  font-weight: 400;
+}
+
+.wsk-layout__header .wsk-navigation__link {
+	color: #212121;
+}
+
+.footer {
+background: #fff;
+font-size: .9em;
+padding: 16px 24px;
+margin-left: 0;
+margin-right: 0;
+text-align: center;
+}
+
+.footer ul {
+margin: 0;
+text-align: right;
+clear: none;
+}
+
+.footer li {
+display: inline;
+line-height: 2.19;
+list-style: none;
+margin: auto;
+}
