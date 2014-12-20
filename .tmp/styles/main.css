@@ -1266,7 +1266,7 @@ body {
   position: relative; }
 
 #transparent {
-  background-image: url('../images/hero-4.jpg');
+  background-image: url('../images/hero-41x.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -1381,6 +1381,7 @@ pre {
 
 @media (min-width: 300px) and (max-width: 800px) {
   #transparent {
+    background-image: url('../images/hero-40.5x.jpg');
     background-position: 10% 40%;
     width: 100%;
     height: 300px; }
