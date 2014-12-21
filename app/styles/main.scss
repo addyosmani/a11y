@@ -71,12 +71,10 @@ pre {
 .preview {
     display: inline-block;
     width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
-.preview p {
-    max-width: 400px;
-}
+
 .preview h3 {
     font-size: 1.57143em;
     margin: 1em 0 .3em;
@@ -84,15 +82,6 @@ pre {
 }
 #preview-audit img {
     float: right;
-}
-#preview-success {
-    text-align: right;
-}
-#preview-success p {
-    float: right;
-}
-#preview-success img {
-    float: left;
 }
 
 .split-container {
@@ -139,6 +128,94 @@ pre {
     text-transform: none;
     text-decoration: none;
 }
+/*CLI*/
+/**
+ * CLI CSS
+ * Adapted from the CSS CLI on GulpJS.com
+ */
+
+pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 20px;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre;
+    white-space: pre-wrap;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+pre.terminal {
+    position: relative;
+    display: block;
+    color: #ddd;
+    background: #000;
+    padding: 5px;
+    margin-top: 2.6em;
+    border: 1px solid #aaa;
+    border: 1px solid rgba(110, 110, 110, 0.3);
+    font-family: Menlo, Menlo-Regular, Inconsolata, Monaco, monospace;
+    font-size: 16px;
+    line-height: 1.2em;
+}
+pre.terminal:before {
+    display: block;
+    position: absolute;
+    content: "a11y";
+    text-align: center;
+    color: #000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: #ccc;
+    background-image: -webkit-linear-gradient(top, #ddd, #aaa);
+    background-image: -moz-linear-gradient(top, #ddd, #aaa);
+    line-height: 1.8em;
+    height: 2em;
+    top: -2.1em;
+    left: -1px;
+    right: -1px;
+    font-family: Lucida Grande, sans-serif;
+    font-size: 12px;
+    color: #3a3a53;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(110, 110, 110, 0.3);
+}
+.command-prompt {
+    color: #FFF;
+}
+.command-prompt:before {
+    content: "$ ";
+    color: #ddd;
+}
+pre.terminal .green {
+    color: #0c0;
+}
+pre.terminal .red {
+    color: red;
+}
+pre.terminal .cyan {
+    text-decoration: underline;
+    color: cyan;
+}
+pre.terminal:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -1.6em;
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0 0 25px 0 #aaa;
+}
 @media (min-width: 300px) and (max-width: 800px) {
     #transparent {
         background-image: url('../images/hero-40.5x.jpg');
@@ -164,4 +241,3 @@ pre {
         height: auto;
     }
 }
-
