@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="a11y - Web Accessibility Command-line Tools">
@@ -34,61 +35,62 @@
 
     <!-- Page styles -->
     <link rel="stylesheet" href="styles/main.css">
-  </head>
-  <body>
+</head>
 
-  
+<body>
+
+
     <div class="wsk-layout wsk-js-layout">
-      <div class="wsk-layout__header wsk-layout__header--transparent is-casting-shadow">
-      <!-- remove transparent to return to old-->
-        <!-- Title -->
-        <span class="wsk-layout-title">
+        <div class="wsk-layout__header wsk-layout__header--transparent is-casting-shadow">
+            <!-- remove transparent to return to old-->
+            <!-- Title -->
+            <span class="wsk-layout-title">
           <img src="images/logo.png" height="40"  alt="a11y - the accessibility CLI for Node">
         </span>
-        <!-- Add spacer, to align navigation to the right -->
-        <div class="wsk-layout-spacer"></div>
-        <!-- Navigation -->
-        <nav class="wsk-navigation">
-          <a class="wsk-navigation__link" href="#get-started">Install</a>
-          <a class="wsk-navigation__link" href="https://github.com/addyosmani/a11y/blob/master/docs/tutorial.md">Tutorial</a>
-          <a class="wsk-navigation__link" href="https://github.com/addyosmani/a11y/issues">Issue Tracker</a>
-          <a class="wsk-navigation__link" href="#resources">Resources</a>
-          <a class="wsk-navigation__link" href="https://github.com/addyosmani/a11y">GitHub</a>
-        </nav>
-      </div>
-      <div class="wsk-layout__drawer">
-        <span class="wsk-layout-title">a11y</span>
-        <nav class="wsk-navigation">
-          <a class="wsk-navigation__link" href="#get-started">Install</a>
-          <a class="wsk-navigation__link" href="https://github.com/addyosmani/a11y/blob/master/docs/tutorial.md">Tutorial</a>
-          <a class="wsk-navigation__link" href="material-styleguide.html">Issue Tracker</a>
-          <a class="wsk-navigation__link" href="#resources">Resources</a>
-          <a class="wsk-navigation__link" href="https://github.com/addyosmani/a11y">GitHub</a>
-        </nav>
-      </div>
-      <div class="wsk-layout__content">
-        <main>
-        <div id="transparent"></div>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="wsk-layout-spacer"></div>
+            <!-- Navigation -->
+            <nav class="wsk-navigation">
+                <a class="wsk-navigation__link" href="#get-started">Install</a>
+                <a class="wsk-navigation__link" href="https://github.com/addyosmani/a11y/blob/master/docs/tutorial.md">Tutorial</a>
+                <a class="wsk-navigation__link" href="https://github.com/addyosmani/a11y/issues">Issue Tracker</a>
+                <a class="wsk-navigation__link" href="#resources">Resources</a>
+                <a class="wsk-navigation__link" href="https://github.com/addyosmani/a11y">GitHub</a>
+            </nav>
+        </div>
+        <div class="wsk-layout__drawer">
+            <span class="wsk-layout-title">a11y</span>
+            <nav class="wsk-navigation">
+                <a class="wsk-navigation__link" href="#get-started">Install</a>
+                <a class="wsk-navigation__link" href="https://github.com/addyosmani/a11y/blob/master/docs/tutorial.md">Tutorial</a>
+                <a class="wsk-navigation__link" href="material-styleguide.html">Issue Tracker</a>
+                <a class="wsk-navigation__link" href="#resources">Resources</a>
+                <a class="wsk-navigation__link" href="https://github.com/addyosmani/a11y">GitHub</a>
+            </nav>
+        </div>
+        <div class="wsk-layout__content">
+            <main>
+                <div id="transparent"></div>
 
-        <section id="content">
-        <h1 id="hello">A11y Command-line Tools</h1>
-        <h2>Web accessibility audits powered by the <img src="images/chrome_48x48.png" class="wsk-icon-logo" height="48" width="48" alt="Chrome logo"> Chrome Accessibility Developer Tools.</h2>  
-        </section>
+                <section id="content">
+                    <h1 id="hello">A11y Command-line Tools</h1>
+                    <h2>Web accessibility audits powered by the <img src="images/chrome_48x48.png" class="wsk-icon-logo" height="48" width="48" alt="Chrome logo"> Chrome Accessibility Developer Tools.</h2>
+                </section>
 
-        <section id="instructions">
+                <section id="instructions">
 
-        <section id="intro" class="preview">
-        <h2>Why?</h2>
-        <p>Accessible web sites need to work across multiple devices with varying screen-sizes and different kinds of input. Moreover, sites should be usable by the broadest group of users, including those with disabilities. When designing for accessibility, there are four key areas of disability to consider: visual, hearing, mobility and cognition.</p>
+                    <section id="intro" class="preview">
+                        <h2>Why?</h2>
+                        <p>Accessible web sites need to work across multiple devices with varying screen-sizes and different kinds of input. Moreover, sites should be usable by the broadest group of users, including those with disabilities. When designing for accessibility, there are four key areas of disability to consider: visual, hearing, mobility and cognition.</p>
 
-        <p>The A11y Command-line Tools assist in discovering common web accessibility issues, such as detecting if your page can be read with a screenreader or works well with high-constrast mode enabled. Whilst it not possible to automate the detection of 100% of accessibility issues, the A11y CLI can help catch and improve your accessibiltiy baseline significantly.</p>
-        </section>
+                        <p>The A11y Command-line Tools assist in discovering common web accessibility issues, such as detecting if your page can be read with a screenreader or works well with high-constrast mode enabled. Whilst it not possible to automate the detection of 100% of accessibility issues, the A11y CLI can help catch and improve your accessibiltiy baseline significantly.</p>
+                    </section>
 
-        <section id="preview-audit" class="preview">
-        <h2>Audit accessibility issues in your web pages</h2>
-        <p>Run audits against local or remote URLs to return a list of accessibility improvements that can be made. We even point out the DOM elements responsible.</p>
+                    <section id="preview-audit" class="preview">
+                        <h2>Audit accessibility issues in your web pages</h2>
+                        <p>Run audits against local or remote URLs to return a list of accessibility improvements that can be made. We even point out the DOM elements responsible.</p>
 
-<pre class="terminal"><span class="command-prompt"></span>a11y bbc.co.uk </br>
+                        <pre class="terminal"><span class="command-prompt"></span>a11y bbc.co.uk </br>
 <span class="cyan">Report for bbc.co.uk</span><br/>
 <span class="red">✖</span> These elements are focusable but either invisible or obscured by another element
 
@@ -104,14 +106,14 @@
 #orb-nav-more > A > .orb-icon.orb-icon-arrow
 ...
 </pre>
-      
-        </section>
 
-        <section id="preview-success" class="preview">
-        <h2>Enforce an accessible baseline</h2>
-        <p>A baseline success report will indicate when you've passed our accessibility tests. Green ticks all around!</p>
+                    </section>
 
-<pre class="terminal">
+                    <section id="preview-success" class="preview">
+                        <h2>Enforce an accessible baseline</h2>
+                        <p>A baseline success report will indicate when you've passed our accessibility tests. Green ticks all around!</p>
+
+                        <pre class="terminal">
 #orb-nav-more > A > .orb-icon.orb-icon-arrow
 ...
 
@@ -122,92 +124,82 @@
 <span class="green">✔</span> The web page should have a title that describes topic or purpose
 <span class="green">✔</span> Elements with ARIA roles must have all required attributes for that role
 </pre>
-        
-        </section>
 
-        <h2 id="get-started">Install</h2>
-        <p>You will need <a href="nodejs.org">Node.js</a> in order to install and use a11y on your machine. Once installed, run the follwing one-liner at the command-line:</p>
+                    </section>
 
-        <pre class="terminal"><span class="command-prompt"></span>npm install -g a11y</pre>
+                    <h2 id="get-started">Install</h2>
+                    <p>You will need <a href="nodejs.org">Node.js</a> in order to install and use a11y on your machine. Once installed, run the follwing one-liner at the command-line:</p>
 
-        <p>PhantomJS, which is used for generating the screenshots, is installed automagically, but in some rare cases it might fail to and you'll get an Error: spawn EACCES error. <a href="http://phantomjs.org/download.html">Download PhantomJS</a> manually and reinstall a11y if that happens.</p>
+                    <pre class="terminal"><span class="command-prompt"></span>npm install -g a11y</pre>
 
-        <h2 id="usage">Usage</h2>
+                    <p>PhantomJS, which is used for generating the screenshots, is installed automagically, but in some rare cases it might fail to and you'll get an Error: spawn EACCES error. <a href="http://phantomjs.org/download.html">Download PhantomJS</a> manually and reinstall a11y if that happens.</p>
 
-        <p>Run an audit against a single URL:</p>
+                    <h2 id="usage">Usage</h2>
 
-        <pre class="terminal"><span class="command-prompt"></span>a11y todomvc.com</pre>
+                    <p>Run an audit against a single URL:</p>
 
-        <p>or multiple URLs:</p>
-<pre class="terminal"><span class="command-prompt"></span>a11y todomvc.com https://google.com </br>
+                    <pre class="terminal"><span class="command-prompt"></span>a11y todomvc.com</pre>
+
+                    <p>or multiple URLs:</p>
+                    <pre class="terminal"><span class="command-prompt"></span>a11y todomvc.com https://google.com </br>
 <span class="cyan">Report for todomvc.com</span><br/>
 ....
 <span class="cyan">Report for https://google.com</span><br/>
 </pre>
 
-        <div class="split-container">
-        <div class="split-left">
-          <h2 id="options">Options</h2>
 
-          <p>Query help</p>
-          <pre class="terminal"><span class="command-prompt"></span>a11y --help</pre>
+                    <h2 id="options">Options</h2>
 
-          <p>Customise viewport size</p>
-          <pre class="terminal"><span class="command-prompt"></span>a11y --viewport-size=800x600</pre>
+                    <p>Query help</p>
+                    <pre class="terminal"><span class="command-prompt"></span>a11y --help</pre>
 
-          <p>Write audit to file</p>
-          <pre class="terminal"><span class="command-prompt"></span>a11y url > audit.txt</pre>
+                    <p>Customise viewport size</p>
+                    <pre class="terminal"><span class="command-prompt"></span>a11y --viewport-size=800x600</pre>
+
+                    <p>Write audit to file</p>
+                    <pre class="terminal"><span class="command-prompt"></span>a11y url > audit.txt</pre>
+
+                    <section class="preview">
+                        <h2 id="resources">Resources</h2>
+                        <p>If you're new to Web Accessibility and would like to learn more about improving the accessibility of your pages, the following resources may prove useful:</p>
+                        <ul id="resource-list">
+                            <li><a href="https://webaccessibility.withgoogle.com/course">Google's Introduction To Web Accessibility Course</a>
+                            </li>
+                            <li><a href="https://www.polymer-project.org/articles/accessible-web-components.html">Accessible Web Components</a>
+                            </li>
+                            <li><a href="http://www.smashingmagazine.com/2014/07/09/the-wai-forward/">The WAI Forward</a>
+                            </li>
+                            <li><a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en">Chrome Accessibility Developer Tools Extension</a>
+                            </li>
+                            <li><a href="http://www.paciellogroup.com/blog/2014/10/accessibility-testing-tools-updated/">Accessibility Testing Tools - The Paciello Group</a>
+                            </li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">MDN Resources On ARIA</a>
+                            </li>
+                            <li><a href="http://marcysutton.github.io/accessibility-of-web-components/slides.html#/slide1">The Accessibility Of Web Components - Marcy Sutton</a>
+                            </li>
+                        </ul>
+                    </section>
+
+                </section>
+
+            </main>
         </div>
 
-        <div class="split-right">
-          <picture>
-            <source 
-              media="(min-width: 1024px)"
-              srcset="images/pastries_billy_witson1280w.jpg 1x,
-              images/pastries_billy_witson.jpg 2x"
-              alt="A selection of pastry options">
-            <img 
-              src="images/pastries_billy_witson800w.jpg" 
-              alt="A selection of pastry options">
-          </picture>
+        <div class="footer">
+            <div class="maia-aux">
+                <ul>
+                    <li>
+                        <a href="https://github.com/addyosmani/a11y">GitHub</a>
+                    </li>
+                    <li>
+                        <a href="//www.google.com/intl/en/policies/privacy/">Privacy</a>
+                    </li>
+                    <li>
+                        <a href="//www.google.com/intl/en/policies/terms/">Terms</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        </div>
-
-
-      <section class="preview">
-        <h2 id="resources">Resources</h2>
-        <p>If you're new to Web Accessibility and would like to learn more about improving the accessibility of your pages, the following resources may prove useful:</p>
-        <ul id="resource-list">
-          <li><a href="https://webaccessibility.withgoogle.com/course">Google's Introduction To Web Accessibility Course</a></li>
-          <li><a href="https://www.polymer-project.org/articles/accessible-web-components.html">Accessible Web Components</a></li>
-          <li><a href="http://www.smashingmagazine.com/2014/07/09/the-wai-forward/">The WAI Forward</a></li>
-          <li><a href="https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en">Chrome Accessibility Developer Tools Extension</a></li>
-          <li><a href="http://www.paciellogroup.com/blog/2014/10/accessibility-testing-tools-updated/">Accessibility Testing Tools - The Paciello Group</a></li>
-          <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">MDN Resources On ARIA</a></li>
-          <li><a href="http://marcysutton.github.io/accessibility-of-web-components/slides.html#/slide1">The Accessibility Of Web Components - Marcy Sutton</a></li>
-        </ul>
-      </section>
-
-        </section>
-
-        </main>     
-      </div>
-
-      <div class="footer">
-      <div class="maia-aux">
-        <ul>
-          <li>
-            <a href="https://github.com/addyosmani/a11y">GitHub</a>
-          </li>
-          <li>
-            <a href="//www.google.com/intl/en/policies/privacy/">Privacy</a>
-          </li>
-          <li>
-            <a href="//www.google.com/intl/en/policies/terms/">Terms</a>
-          </li>
-        </ul>
-      </div>
-    </div>
     </div>
 
 
@@ -221,13 +213,21 @@
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-XXXXX-X', 'auto');
-      ga('send', 'pageview');
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-XXXXX-X', 'auto');
+    ga('send', 'pageview');
     </script>
     <!-- Built with love using Web Starter Kit -->
-  </body>
+</body>
+
 </html>
