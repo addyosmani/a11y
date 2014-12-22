@@ -4,7 +4,18 @@
   "description": "Runs an accessibility audit against a URL",
   "license": "Apache-2.0",
   "repository": "addyosmani/a11y",
-  "author": "Addy Osmani",
+  "maintainers": [
+    {
+      "name": "Addy Osmani",
+      "email": "addyosmani@gmail.com",
+      "url": "addyosmani.com"
+    },
+    {
+      "name": "Sindre Sorhus",
+      "email": "sindresorhus@gmail.com",
+      "url": "sindresorhus.com"
+    }
+  ],
   "bin": {
     "a11y": "cli.js"
   },
