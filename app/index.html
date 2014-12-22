@@ -93,6 +93,7 @@
 <span class="red">✖</span> Meaningful images should not be used in element backgrounds
 
 #orb-nav-more > A > .orb-icon.orb-icon-arrow
+...
 </pre>
       
         </section>
@@ -118,17 +119,17 @@
         <h2 id="get-started">Install</h2>
         <p>You will need <a href="nodejs.org">Node.js</a> in order to install and use a11y on your machine. Once installed, run the follwing one-liner at the command-line:</p>
 
-        <pre>$ npm install -g a11y</pre>
+        <pre class="terminal"><span class="command-prompt"></span>npm install -g a11y</pre>
 
         <p>PhantomJS, which is used for generating the screenshots, is installed automagically, but in some rare cases it might fail to and you'll get an Error: spawn EACCES error. <a href="http://phantomjs.org/download.html">Download PhantomJS</a> manually and reinstall a11y if that happens.</p>
 
         <h2 id="usage">Usage</h2>
 
         <p>Run an audit against a single URL:</p>
-        <pre>$ a11y todomvc.com</pre>
+
+        <pre class="terminal"><span class="command-prompt"></span>a11y todomvc.com</pre>
 
         <p>or multiple URLs:</p>
-
 <pre class="terminal"><span class="command-prompt"></span>a11y todomvc.com https://google.com </br>
 <span class="cyan">Report for todomvc.com</span><br/>
 ....

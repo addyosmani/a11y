@@ -1265,6 +1265,9 @@ body {
   margin-bottom: -12px;
   position: relative; }
 
+a {
+  text-decoration: none; }
+
 #transparent {
   background-image: url('../images/hero-41x.jpg');
   background-size: cover;
@@ -1291,9 +1294,9 @@ body {
   padding: 20px; }
 
 #instructions h2 {
-  font-weight: 400;
+  font-size: 1.57143em;
+  font-weight: 300;
   color: #757575;
-  line-height: 1.3;
   padding-top: 50px; }
 
 .wsk-layout__content h1 {
@@ -1459,10 +1462,10 @@ pre.terminal:after {
     height: 300px; }
 
   .wsk-layout__content h1 {
-    font-size: 1.5em; }
+    font-size: 1.8em; }
 
   .wsk-layout__content h2 {
-    font-size: 1em;
+    font-size: 1.1em;
     font-weight: 300;
     line-height: 1.5em; }
 
