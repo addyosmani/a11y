@@ -1267,7 +1267,12 @@ body {
   position: relative; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #212121; }
+
+#resource-list {
+  border-left: 4px solid #C5CAE9;
+  list-style-type: none; }
 
 #transparent {
   background-image: url('../images/hero-41x.jpg');
