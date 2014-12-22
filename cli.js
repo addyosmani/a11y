@@ -50,7 +50,7 @@ eachAsync(urls, function (url, i, next) {
       var passes = '';
       var failures = '';
 
-      console.log(chalk.underline(chalk.cyan('\nReport for ' + url.replace(/^http:\/\//, '') + '\n')));
+      console.log(chalk.underline(chalk.cyan('\n' + url.replace(/^http:\/\//, '') + '\n')));
 
       reports.audit.forEach(function (el) {
           if (el.result === 'PASS') {
