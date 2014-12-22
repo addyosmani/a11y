@@ -17,7 +17,7 @@ module.exports = function (url, opts, cb) {
         throw new Error('Callback required');
     }
 
-    if (!url || !url.length > 0) {
+    if (!(url && url.length > 0)) {
         throw new Error('Please supply a valid URL');
     }
 
