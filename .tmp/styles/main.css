@@ -1302,7 +1302,7 @@ a {
   font-size: 1.57143em;
   font-weight: 500;
   color: #303F9F;
-  padding-top: 20px; }
+  padding-top: 10px; }
 
 .wsk-layout__content h1 {
   font-size: 2em; }
@@ -1461,7 +1461,7 @@ pre.terminal:after {
 
 @media (min-width: 300px) and (max-width: 800px) {
   #transparent {
-    background-image: url('../images/hero-40.5x.jpg');
+    background-image: url('../images/hero-50.5.jpg');
     background-position: 10% 40%;
     width: 100%;
     height: 300px; }
@@ -1483,3 +1483,6 @@ pre.terminal:after {
     max-width: 100%;
     height: auto; }
  }
+
+p {
+  font-size: 1.2em; }
