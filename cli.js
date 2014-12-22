@@ -7,7 +7,8 @@ var a11y = require('./');
 var chalk = require('chalk');
 var each = require('each-async');
 var indent = require('indent-string');
-
+var arrayUniq = require('array-uniq');
+var protocolify = require('protocolify');
 
 var cli = meow({
     help: [
@@ -30,7 +31,11 @@ updateNotifier({
     packageVersion: cli.pkg.version
 }).notify();
 
-each(cli.input, function (url) {
+var urls = arrayUniq(cli.input.map(function (el) {
+    return protocolify(el);
+}));
+
+each(urls, function (url) {
   a11y(url, cli.flags, function (err, reports) {
       if (err) {
           console.error(err.message);
