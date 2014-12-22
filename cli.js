@@ -3,12 +3,12 @@
 var logSymbols = require('log-symbols');
 var meow = require('meow');
 var updateNotifier = require('update-notifier');
-var a11y = require('./');
 var chalk = require('chalk');
-var each = require('each-async');
-var indent = require('indent-string');
+var eachAsync = require('each-async');
+var indentString = require('indent-string');
 var arrayUniq = require('array-uniq');
 var protocolify = require('protocolify');
+var a11y = require('./');
 
 var cli = meow({
     help: [
@@ -35,7 +35,7 @@ var urls = arrayUniq(cli.input.map(function (el) {
     return protocolify(el);
 }));
 
-each(urls, function (url) {
+eachAsync(urls, function (url, i, next) {
   a11y(url, cli.flags, function (err, reports) {
       if (err) {
           console.error(err.message);
@@ -51,6 +51,7 @@ each(urls, function (url) {
       var failures = '';
 
       console.log(chalk.underline(chalk.cyan('\nReport for ' + url + '\n')));
+
       reports.audit.forEach(function (el) {
           if (el.result === 'PASS') {
               passes += logSymbols.success + ' ' + el.heading + '\n';
@@ -60,10 +61,11 @@ each(urls, function (url) {
               failures += logSymbols.error + ' ' + el.heading + '\n';
               failures += el.elements + '\n\n';
           }
-
       });
 
-      console.log(indent(failures, ' ', 2));
-      console.log(indent(passes, ' ', 2));
+      console.log(indentString(failures, ' ', 2));
+      console.log(indentString(passes, ' ', 2));
+
+      next();
   });
 });
