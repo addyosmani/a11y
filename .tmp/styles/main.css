@@ -1259,7 +1259,8 @@ dt {
     background-color: transparent; }
 
 body {
-  margin: 0px; }
+  margin: 0px;
+  color: #757575; }
 
 .wsk-icon-logo {
   margin-bottom: -12px;
@@ -1286,7 +1287,6 @@ a {
 
 #content p {
   color: #C5CAE9;
-  /*#DCEDC8*/
   font-size: 1.57143em;
   font-weight: 400; }
 
@@ -1295,9 +1295,9 @@ a {
 
 #instructions h2 {
   font-size: 1.57143em;
-  font-weight: 300;
-  color: #757575;
-  padding-top: 50px; }
+  font-weight: 500;
+  color: #212121;
+  padding-top: 20px; }
 
 .wsk-layout__content h1 {
   font-size: 2em; }
@@ -1322,10 +1322,10 @@ pre {
   padding-top: 20px;
   padding-bottom: 20px; }
 
-.preview h3 {
+.preview h2 {
   font-size: 1.57143em;
   margin: 1em 0 0.3em;
-  color: #757575; }
+  color: #212121; }
 
 #preview-audit img {
   float: right; }
