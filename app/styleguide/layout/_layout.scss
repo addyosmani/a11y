@@ -46,7 +46,7 @@ $layout-screen-size-threshold: 850px;
 // Main layout class.
 .wsk-layout {
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -98,6 +98,7 @@ $layout-screen-size-threshold: 850px;
 
     overflow-x: hidden;
     overflow-y: auto;
+
 
     z-index: 5;
 

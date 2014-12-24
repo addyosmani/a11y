@@ -959,7 +959,6 @@ dt {
 
 .wsk-layout {
   width: 100%;
-  height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
