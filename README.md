@@ -4,7 +4,7 @@
 
 > Easy accessibility audits powered by the [Chrome Accessibility Tools](https://www.npmjs.com/package/accessibility-developer-tools).
 
-![](http://i.imgur.com/4BljBqv.png)
+![](http://i.imgur.com/Mt751vA.png)
 
 
 ## Install
@@ -33,7 +33,7 @@ $ a11y http://todomvc.com https://google.com
 
 ## Example
 
-![](http://i.imgur.com/NBaz6qe.png)
+![](http://i.imgur.com/3xg3Fsf.png)
 
 Also works fine against localhost:
 
@@ -47,7 +47,7 @@ and local files:
 $ a11y index.html
 ```
 
-![](http://i.imgur.com/1m3pi78.png)
+![](http://i.imgur.com/Ffkrr9D.png)
 
 ## Options
 
