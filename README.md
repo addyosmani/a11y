@@ -118,6 +118,11 @@ Per the Accessibility Developer Tools, the results in an audit may be one of thr
 * `FAIL` - This implies that there were elements on the page that did not pass this audit rule. This is the only result you will probably be interested in.
 * `NA` - This implies that there were no elements on the page that may potentially have failed this audit rule. For example, an audit rule that checks video elements for subtitles would return this result if there were no video elements on the page.
 
+## Integrating a11y into your build
+
+<!--- A sample [Gulp](https://github.com/lucalanca/a11y-gulp-sample) project using a11y is available. -->
+
+If you use Grunt, [grunt-a11y](https://github.com/lucalanca/grunt-a11y) is a task by João Figueiredo that uses a11y under the hood.
 
 ## License
 
