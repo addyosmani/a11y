@@ -120,8 +120,6 @@ Per the Accessibility Developer Tools, the results in an audit may be one of thr
 
 ## Integrating a11y into your build
 
-<!--- A sample [Gulp](https://github.com/lucalanca/a11y-gulp-sample) project using a11y is available. -->
-
 If you use Grunt, [grunt-a11y](https://github.com/lucalanca/grunt-a11y) is a task by João Figueiredo that uses a11y under the hood.
 
 ## License
