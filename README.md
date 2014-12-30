@@ -1,6 +1,6 @@
 <img width="400px" src="https://cloud.githubusercontent.com/assets/110953/4694241/3ddba98e-57c1-11e4-852a-dc0940345a89.png">
 
-#  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image][![Unicorn approved][unicorn-image]]
+#  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image] ![](http://img.shields.io/badge/unicorn-approved-ff69b4.svg?style=flat)
 
 
 > Easy accessibility audits powered by the [Chrome Accessibility Tools](https://www.npmjs.com/package/accessibility-developer-tools).
@@ -133,4 +133,3 @@ Apache-2.0
 [travis-image]: https://travis-ci.org/addyosmani/a11y.svg?branch=master
 [daviddm-url]: https://david-dm.org/addyosmani/a11y.svg?theme=shields.io
 [daviddm-image]: https://david-dm.org/addyosmani/a11y
-[unicorn-image]: http://img.shields.io/badge/unicorn-approved-ff69b4.svg?style=flat
