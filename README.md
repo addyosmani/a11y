@@ -1,6 +1,7 @@
 <img width="400px" src="https://cloud.githubusercontent.com/assets/110953/4694241/3ddba98e-57c1-11e4-852a-dc0940345a89.png">
 
-[![Build Status](http://img.shields.io/travis/addyosmani/a11y/master.svg?style=flat)](https://travis-ci.org/addyosmani/a11y?style=flat) ![](http://img.shields.io/badge/unicorn-approved-ff69b4.svg?style=flat)
+#  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image][![Unicorn approved][unicorn-image]]
+
 
 > Easy accessibility audits powered by the [Chrome Accessibility Tools](https://www.npmjs.com/package/accessibility-developer-tools).
 
@@ -125,3 +126,11 @@ If you use Grunt, [grunt-a11y](https://github.com/lucalanca/grunt-a11y) is a tas
 ## License
 
 Apache-2.0
+
+[npm-url]: https://npmjs.org/package/a11y
+[npm-image]: https://badge.fury.io/js/a11y.svg
+[travis-url]: https://travis-ci.org/addyosmani/a11y
+[travis-image]: https://travis-ci.org/addyosmani/a11y.svg?branch=master
+[daviddm-url]: https://david-dm.org/addyosmani/a11y.svg?theme=shields.io
+[daviddm-image]: https://david-dm.org/addyosmani/a11y
+[unicorn-image]: http://img.shields.io/badge/unicorn-approved-ff69b4.svg?style=flat
