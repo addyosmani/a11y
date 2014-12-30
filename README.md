@@ -63,6 +63,12 @@ Customise viewport size:
 $ a11y --viewport-size=800x600
 ```
 
+Customize page timeout:
+
+```sh
+$ a11y --timeout=10000
+```
+
 Verbose mode:
 
 ```sh
