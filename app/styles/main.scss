@@ -26,7 +26,7 @@ a {
     color: #212121; 
 }
 
-#resource-list {
+.resource-list {
     border-left: 4px solid #C5CAE9;
     list-style-type:none;
 }
@@ -90,6 +90,11 @@ pre {
     margin: 1em 0 .3em;
     color: #212121;
 }
+
+.preview h3 {
+    font-size: 1.4em;
+}
+
 #preview-audit img {
     float: right;
 }
