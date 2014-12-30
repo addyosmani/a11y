@@ -27,7 +27,8 @@ module.exports = function (url, opts, cb) {
     opts = objectAssign({}, opts, {
         url: protocolify(url),
         width: viewportSize[0] || 1024,
-        height: viewportSize[1] || 768
+        height: viewportSize[1] || 768,
+        timeout: opts.timeout || 9000
     });
 
     execFile(phantomjs.path, [

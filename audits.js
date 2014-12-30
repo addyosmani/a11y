@@ -18,7 +18,7 @@ console.error = function () {
     system.stderr.writeLine([].slice.call(arguments).join(' '));
 };
 
-webpage.settings.resourceTimeout = PAGE_TIMEOUT;
+webpage.settings.resourceTimeout = opts.timeout;
 
 webpage.viewportSize = {
     width: opts.width,

@@ -22,7 +22,8 @@ var cli = meow({
         '',
         'Options',
         '  --verbose                 Displays more information',
-        '  --viewport-size=1024x768  Sets the viewport size'
+        '  --viewport-size=1024x768  Sets the viewport size',
+        '  --timeout=10000           Sets the page timeout'
     ].join('\n')
 });
 
