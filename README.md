@@ -108,6 +108,25 @@ a11y('twitter.com', function (err, reports) {
 });
 ```
 
+Passing options:
+
+```js
+var a11y = require('a11y');
+var options = {
+  viewportSize: '800x600'
+};
+
+a11y('twitter.com', options, function (err, reports) {
+    // ...
+});
+```
+
+Currently, the only suported option is:
+
+  - `viewportSize` (String in format WIDTHxHEIGHT, eg `800x600`)
+
+
+
 
 ## Interpreting results
 
