@@ -70,7 +70,7 @@ $ a11y --viewport-size=800x600
 ### Set a custom delay before capturing the page
 
 Type: Number (seconds)
-Default: 0
+Default: 1
 
 ```sh
 $ a11y --delay=5
