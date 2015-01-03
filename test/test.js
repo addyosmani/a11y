@@ -40,9 +40,18 @@ test('test local input generates a report if callback is third param', function 
     });
 });
 
+test('test local input generates a report requiring a delay', function (t) {
+    t.plan(2);
+    a11y('fixture.html', {delay: 5} , function (err, reports) {
+        t.assert(reports.audit[8].heading === 'role=main should only appear on significant elements');
+        t.assert(reports.audit[8].result === 'FAIL');
+    });
+});
+
 test('test local input generates a verbose report', function (t) {
     t.plan(1);
     a11y('fixture.html', {verbose: true}, function (err, reports) {
         t.assert(reports.report.indexOf('*** Begin accessibility audit results ***') !== -1);
     });
 });
+

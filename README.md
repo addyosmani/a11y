@@ -52,25 +52,39 @@ $ a11y index.html
 
 ## Options
 
-Query help:
+### Query help:
 
 ```sh
 $ a11y --help
 ```
 
-Customise viewport size:
+### Customise viewport size
+
+Type: String
+Default: 1024x768
 
 ```sh
 $ a11y --viewport-size=800x600
 ```
 
-Verbose mode:
+### Set a custom delay before capturing the page
+
+Type: Number (seconds)
+Default: 0
+
+```sh
+$ a11y --delay=5
+```
+
+Useful when the site does things after load that you want to capture.
+
+### Verbose mode:
 
 ```sh
 $ a11y <url> --verbose
 ```
 
-Write audit to file:
+### Write audit to file:
 
 ```sh
 $ a11y <url> > audit.txt

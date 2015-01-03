@@ -23,6 +23,7 @@ var cli = meow({
         'Options',
         '  --verbose                 Displays more information',
         '  --viewport-size=1024x768  Sets the viewport size'
+        '  --delay                   Sets the delay capturing the page'
     ].join('\n')
 });
 
