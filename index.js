@@ -24,7 +24,7 @@ module.exports = function (url, opts, cb) {
     var viewportSize = (opts.viewportSize || '').split('x');
     delete opts.viewportSize;
 
-    opts = objectAssign({}, opts, {
+    opts = objectAssign({delay: 1}, opts, {
         url: protocolify(url),
         width: viewportSize[0] || 1024,
         height: viewportSize[1] || 768

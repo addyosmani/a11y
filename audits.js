@@ -26,13 +26,14 @@ webpage.viewportSize = {
 };
 
 webpage.onResourceTimeout = function (err) {
-    console.log('Error code:' +  err.errorCode + ' ' + err.errorString + ' for ' + err.url);
+    console.log('Error code:' + err.errorCode + ' ' + err.errorString + ' for ' + err.url);
     phantom.exit(1);
 };
 
 webpage.onError = opts.verbose ? function (err, trace) {
     console.error(err + '\n' + formatTrace(trace[0]) + '\n');
-} : function () {};
+} : function () {
+};
 
 webpage.open(opts.url, function (status) {
     if (status === 'fail') {
@@ -43,50 +44,53 @@ webpage.open(opts.url, function (status) {
     // Inject axs_testing
     webpage.injectJs(TOOLS_PATH);
 
-    var ret = webpage.evaluate(function () {
-        var results = axs.Audit.run();
+    window.setTimeout(function () {
+        var ret = webpage.evaluate(function () {
+            var results = axs.Audit.run();
 
-        var audit = results.map(function (result) {
-            var DOMElements = result.elements;
-            var message = '';
+            var audit = results.map(function (result) {
+                var DOMElements = result.elements;
+                var message = '';
 
-            if (DOMElements !== undefined) {
-                var maxElements = Math.min(DOMElements.length, 5);
+                if (DOMElements !== undefined) {
+                    var maxElements = Math.min(DOMElements.length, 5);
 
-                for (var i = 0; i < maxElements; i++) {
-                    var el = DOMElements[i];
-                    message += '\n';
-                    // Get query selector not browser independent. catch any errors and
-                    // default to simple tagName.
-                    try {
-                        message += axs.utils.getQuerySelectorText(el);
-                    } catch (err) {
-                        message += ' tagName:' + el.tagName;
-                        message += ' id:' + el.id;
+                    for (var i = 0; i < maxElements; i++) {
+                        var el = DOMElements[i];
+                        message += '\n';
+                        // Get query selector not browser independent. catch any errors and
+                        // default to simple tagName.
+                        try {
+                            message += axs.utils.getQuerySelectorText(el);
+                        } catch (err) {
+                            message += ' tagName:' + el.tagName;
+                            message += ' id:' + el.id;
+                        }
                     }
                 }
-            }
+
+                return {
+                    heading: result.rule.heading,
+                    result: result.result,
+                    severity: result.rule.severity,
+                    elements: message
+                };
+            });
 
             return {
-                heading: result.rule.heading,
-                result: result.result,
-                severity: result.rule.severity,
-                elements: message
+                audit: audit,
+                report: axs.Audit.createReport(results)
             };
         });
 
-        return {
-            audit: audit,
-            report: axs.Audit.createReport(results)
-        };
-    });
+        if (!ret) {
+            system.stderr.writeLine('Audit failed');
+            phantom.exit(1);
+            return;
+        }
 
-    if (!ret) {
-        system.stderr.writeLine('Audit failed');
-        phantom.exit(1);
-        return;
-    }
+        console.log(JSON.stringify(ret));
+        phantom.exit();
+    }, opts.delay * 1000);
 
-    console.log(JSON.stringify(ret));
-    phantom.exit();
 });
