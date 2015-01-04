@@ -18,7 +18,7 @@ module.exports = function (url, opts, cb) {
     }
 
     if (!(url && url.length > 0)) {
-        throw new Error('Please supply a valid URL');
+        throw new Error('Please supply at least one URL');
     }
 
     var viewportSize = (opts.viewportSize || '').split('x');

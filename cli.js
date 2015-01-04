@@ -32,6 +32,11 @@ updateNotifier({
     packageVersion: cli.pkg.version
 }).notify();
 
+if (cli.input.length === 0) {
+    console.error('Please supply at least one URL');
+    process.exit(1);
+}
+
 var urls = arrayUniq(cli.input.map(function (el) {
     return protocolify(el);
 }));

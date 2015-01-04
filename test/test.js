@@ -11,7 +11,7 @@ test('test that an empty URL fails', function (t) {
     try {
         a11y('', function () {});
     } catch (e) {
-        t.assert(e.toString().indexOf('Please supply a valid URL') > -1);
+        t.assert(e.toString().indexOf('Please supply at least one URL') > -1);
     }
 });
 
