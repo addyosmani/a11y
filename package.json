@@ -51,6 +51,7 @@
     "array-uniq": "^1.0.2",
     "chalk": "^0.5.1",
     "each-async": "^1.1.0",
+    "humanize-url": "^1.0.0",
     "indent-string": "^1.2.0",
     "log-symbols": "^1.0.1",
     "meow": "^2.0.0",

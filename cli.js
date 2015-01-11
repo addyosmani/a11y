@@ -8,6 +8,7 @@ var eachAsync = require('each-async');
 var indentString = require('indent-string');
 var arrayUniq = require('array-uniq');
 var protocolify = require('protocolify');
+var humanizeUrl = require('humanize-url');
 var a11y = require('./');
 
 var cli = meow({
@@ -59,7 +60,7 @@ eachAsync(urls, function (url, i, next) {
       console.log('');
 
       if (!process.stdout.isTTY || urls.length > 1) {
-        console.log(chalk.underline(chalk.cyan(url.replace(/^http:\/\//, '') + '\n')));
+        console.log(chalk.underline(chalk.cyan(humanizeUrl(url) + '\n')));
       }
 
       reports.audit.forEach(function (el) {
