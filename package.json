@@ -58,7 +58,7 @@
     "object-assign": "^2.0.0",
     "phantomjs": "^1.9.10",
     "protocolify": "^1.0.0",
-    "update-notifier": "^0.2.2"
+    "update-notifier": "^0.3.0"
   },
   "devDependencies": {
     "ava": "0.0.4"
