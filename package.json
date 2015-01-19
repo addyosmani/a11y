@@ -19,6 +19,7 @@
   "bin": {
     "a11y": "cli.js"
   },
+  "preferGlobal": true,
   "engines": {
     "node": ">=0.10.0"
   },
