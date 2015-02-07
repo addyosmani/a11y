@@ -55,7 +55,7 @@
     "humanize-url": "^1.0.0",
     "indent-string": "^1.2.0",
     "log-symbols": "^1.0.1",
-    "meow": "^2.0.0",
+    "meow": "^3.0.0",
     "object-assign": "^2.0.0",
     "phantomjs": "^1.9.10",
     "protocolify": "^1.0.0",
