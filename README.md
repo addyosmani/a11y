@@ -153,6 +153,10 @@ Per the Accessibility Developer Tools, the results in an audit may be one of thr
 
 If you use Grunt, [grunt-a11y](https://github.com/lucalanca/grunt-a11y) is a task by João Figueiredo that uses `a11y` under the hood.
 
+## Status
+
+At this time, this module should be relatively reliable when auditing for accessibility issues in static sites. 
+
 
 ## License
 
