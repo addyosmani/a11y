@@ -6,7 +6,7 @@ var updateNotifier = require('update-notifier');
 var chalk = require('chalk');
 var eachAsync = require('each-async');
 var indentString = require('indent-string');
-var arrayUniq = require('array-uniq');
+var globby = require('globby');
 var protocolify = require('protocolify');
 var humanizeUrl = require('humanize-url');
 var a11y = require('./');
@@ -35,9 +35,11 @@ if (cli.input.length === 0) {
     process.exit(1);
 }
 
-var urls = arrayUniq(cli.input.map(function (el) {
-    return protocolify(el);
-}));
+// Parse the CLI input into valid paths using glob and protocolify.
+var urls = globby.sync(cli.input, {
+  // Ensure not-found paths (like "google.com"), are returned.
+  nonull: true
+}).map(protocolify);
 
 eachAsync(urls, function (url, i, next) {
   a11y(url, cli.flags, function (err, reports) {
