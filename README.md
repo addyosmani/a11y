@@ -41,13 +41,19 @@ Also works fine against localhost:
 $ a11y localhost:9000
 ```
 
-and local files, with [glob](https://github.com/isaacs/node-glob#glob) patterns:
+and local files:
 
 ```sh
 $ a11y index.html web/**/*.html
 ```
 
 ![](http://i.imgur.com/Ffkrr9D.png)
+
+even with [glob](https://github.com/isaacs/node-glob#glob) patterns:
+
+```sh
+$ a11y **/*.html
+```
 
 ## Options
 
