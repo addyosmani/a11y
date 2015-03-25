@@ -44,7 +44,7 @@ $ a11y localhost:9000
 and local files:
 
 ```sh
-$ a11y index.html web/**/*.html
+$ a11y index.html
 ```
 
 ![](http://i.imgur.com/Ffkrr9D.png)
