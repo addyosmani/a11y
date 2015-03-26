@@ -49,6 +49,12 @@ $ a11y index.html
 
 ![](http://i.imgur.com/Ffkrr9D.png)
 
+even with [glob](https://github.com/isaacs/node-glob#glob) patterns:
+
+```sh
+$ a11y **/*.html
+```
+
 ## Options
 
 ### Query help:
