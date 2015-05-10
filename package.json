@@ -51,7 +51,7 @@
     "accessibility-developer-tools": "^2.6.0",
     "chalk": "^1.0.0",
     "each-async": "^1.1.0",
-    "globby": "^1.2.0",
+    "globby": "^2.0.0",
     "humanize-url": "^1.0.0",
     "indent-string": "^1.2.0",
     "log-symbols": "^1.0.1",
@@ -59,7 +59,7 @@
     "object-assign": "^2.0.0",
     "phantomjs": "^1.9.10",
     "protocolify": "^1.0.0",
-    "update-notifier": "^0.3.0"
+    "update-notifier": "^0.5.0"
   },
   "devDependencies": {
     "ava": "0.0.4"
