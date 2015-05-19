@@ -16,9 +16,7 @@
       "url": "sindresorhus.com"
     }
   ],
-  "bin": {
-    "a11y": "cli.js"
-  },
+  "bin": "cli.js",
   "preferGlobal": true,
   "engines": {
     "node": ">=0.10.0"
@@ -34,6 +32,7 @@
   ],
   "keywords": [
     "cli-app",
+    "cli",
     "a11y",
     "audit",
     "test",
