@@ -65,3 +65,11 @@ test('test local input generates a verbose report', function (t) {
     });
 });
 
+test('test local input generates a report that includes all failures for a given violation', function (t) {
+    t.plan(2);
+    a11y('fixture.html', function (err, reports) {
+        var matchingReports = auditsWithHeader(reports, 'This element has an unsupported ARIA attribute');
+        t.assert(matchingReports.length === 1);
+        t.assert(matchingReports[0] && matchingReports[0].elements.match(/\n/g).length === 6);
+    });
+});

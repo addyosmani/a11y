@@ -53,9 +53,7 @@ webpage.open(opts.url, function (status) {
                 var message = '';
 
                 if (DOMElements !== undefined) {
-                    var maxElements = Math.min(DOMElements.length, 5);
-
-                    for (var i = 0; i < maxElements; i++) {
+                    for (var i = 0; i < DOMElements.length; i++) {
                         var el = DOMElements[i];
                         message += '\n';
                         // Get query selector not browser independent. catch any errors and
