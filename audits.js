@@ -32,7 +32,7 @@ webpage.viewportSize = {
 };
 
 webpage.onResourceTimeout = function (err) {
-    console.log('Error code:' + err.errorCode + ' ' + err.errorString + ' for ' + err.url);
+    console.error('Error code:' + err.errorCode + ' ' + err.errorString + ' for ' + err.url);
     phantom.exit(1);
 };
 
@@ -43,7 +43,7 @@ webpage.onError = opts.verbose ? function (err, trace) {
 
 webpage.open(opts.url, function (status) {
     if (status === 'fail') {
-        console.error('Couldn\'t load url: ' + url);
+        console.error('Couldn\'t load url: '  + opts.url);
         phantom.exit(1);
     }
 
@@ -88,7 +88,7 @@ webpage.open(opts.url, function (status) {
         });
 
         if (!ret) {
-            system.stderr.writeLine('Audit failed');
+            console.error('Audit failed');
             phantom.exit(1);
             return;
         }
