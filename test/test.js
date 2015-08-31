@@ -81,8 +81,9 @@ test('test local input generates a report that includes all failures for a given
 });
 
 test('tests local input on a subsection of the page when a scopeSelector is provided', function (t) {
-    t.plan(2);
+    t.plan(3);
     a11y('fixture.html', {adtConfigProperties: {scopeSelector: '#subpage'}}, function (err, reports) {
+        t.error(err);
         var matchingReports = auditsWithHeader(reports, 'Elements with ARIA roles must use a valid, non-abstract ARIA role');
         t.is(matchingReports.length, 1);
         t.is(matchingReports[0] && matchingReports[0].elements.match(/\n/g).length, 1);
