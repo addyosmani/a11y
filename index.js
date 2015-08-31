@@ -4,6 +4,7 @@ var execFile = require('child_process').execFile;
 var phantomjs = require('phantomjs');
 var objectAssign = require('object-assign');
 var protocolify = require('protocolify');
+var parseJson = require('parse-json');
 
 module.exports = function (url, opts, cb) {
     if (typeof opts !== 'object') {
@@ -42,6 +43,6 @@ module.exports = function (url, opts, cb) {
             return;
         }
 
-        cb(null, JSON.parse(stdout));
+        cb(null, parseJson(stdout));
     });
 };

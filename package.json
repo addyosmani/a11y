@@ -56,6 +56,7 @@
     "log-symbols": "^1.0.1",
     "meow": "^3.3.0",
     "object-assign": "^4.0.1",
+    "parse-json": "^2.1.0",
     "phantomjs": "^1.9.10",
     "phantomjs-polyfill": "0.0.1",
     "protocolify": "^1.0.0",
