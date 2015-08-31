@@ -55,8 +55,14 @@ webpage.open(opts.url, function (status) {
     webpage.injectJs(TOOLS_PATH);
 
     window.setTimeout(function () {
-        var ret = webpage.evaluate(function () {
-            var results = axs.Audit.run();
+        var ret = webpage.evaluate(function (adtConfigProperties) {
+            var configuration = new axs.AuditConfiguration();
+
+            if (adtConfigProperties && adtConfigProperties.scopeSelector) {
+                configuration.scope = document.querySelector(adtConfigProperties.scopeSelector);
+            }
+
+            var results = axs.Audit.run(configuration);
 
             var audit = results.map(function (result) {
                 var DOMElements = result.elements;
@@ -89,7 +95,7 @@ webpage.open(opts.url, function (status) {
                 audit: audit,
                 report: axs.Audit.createReport(results)
             };
-        });
+        }, opts.adtConfigProperties);
 
         if (!ret) {
             console.error('Audit failed');
