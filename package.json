@@ -22,8 +22,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "node test/test.js",
-    "demo": "node cli.js theverge.com"
+    "test": "ava test/test.js",
+    "demo": "./cli.js theverge.com"
   },
   "files": [
     "index.js",
@@ -62,6 +62,6 @@
     "update-notifier": "^0.5.0"
   },
   "devDependencies": {
-    "ava": "0.0.4"
+    "ava": "^0.1.0"
   }
 }
