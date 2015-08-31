@@ -1,3 +1,7 @@
+/* eslint-env phantomjs, browser */
+/* globals axs */
+'use strict';
+
 /**
  * Conducts audits using the Chrome Accessibility Tools and PhantomJS.
  */
@@ -21,7 +25,7 @@ console.error = function () {
 
 // Need to polyfill bind...
 webpage.onInitialized = function () {
-  webpage.injectJs(BIND_POLYFILL_PATH);
+    webpage.injectJs(BIND_POLYFILL_PATH);
 };
 
 webpage.settings.resourceTimeout = PAGE_TIMEOUT;
@@ -43,7 +47,7 @@ webpage.onError = opts.verbose ? function (err, trace) {
 
 webpage.open(opts.url, function (status) {
     if (status === 'fail') {
-        console.error('Couldn\'t load url: '  + opts.url);
+        console.error('Couldn\'t load url: ' + JSON.stringify(opts.url));
         phantom.exit(1);
     }
 
@@ -97,9 +101,8 @@ webpage.open(opts.url, function (status) {
         // Must do crazy song and dance to get phantom to exit properly
         // https://github.com/ariya/phantomjs/issues/12697
         webpage.close();
-        setTimeout(function() {
+        setTimeout(function () {
             phantom.exit();
         }, 0);
     }, opts.delay * 1000);
-
 });

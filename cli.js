@@ -37,45 +37,45 @@ if (cli.input.length === 0) {
 
 // Parse the CLI input into valid paths using glob and protocolify.
 var urls = globby.sync(cli.input, {
-  // Ensure not-found paths (like "google.com"), are returned.
-  nonull: true
+    // Ensure not-found paths (like "google.com"), are returned.
+    nonull: true
 }).map(protocolify);
 
 eachAsync(urls, function (url, i, next) {
-  a11y(url, cli.flags, function (err, reports) {
-      if (err) {
-          console.error(err.message);
-          process.exit(err.code || 1);
-      }
+    a11y(url, cli.flags, function (err, reports) {
+        if (err) {
+            console.error(err.message);
+            process.exit(err.code || 1);
+        }
 
-      if (cli.flags.verbose) {
-          console.log(reports);
-          return;
-      }
+        if (cli.flags.verbose) {
+            console.log(reports);
+            return;
+        }
 
-      var passes = '';
-      var failures = '';
+        var passes = '';
+        var failures = '';
 
-      console.log('');
+        console.log('');
 
-      if (!process.stdout.isTTY || urls.length > 1) {
-        console.log(chalk.underline(chalk.cyan(humanizeUrl(url) + '\n')));
-      }
+        if (!process.stdout.isTTY || urls.length > 1) {
+            console.log(chalk.underline(chalk.cyan(humanizeUrl(url) + '\n')));
+        }
 
-      reports.audit.forEach(function (el) {
-          if (el.result === 'PASS') {
-              passes += logSymbols.success + ' ' + el.heading + '\n';
-          }
+        reports.audit.forEach(function (el) {
+            if (el.result === 'PASS') {
+                passes += logSymbols.success + ' ' + el.heading + '\n';
+            }
 
-          if (el.result === 'FAIL') {
-              failures += logSymbols.error + ' ' + el.heading + '\n';
-              failures += el.elements + '\n\n';
-          }
-      });
+            if (el.result === 'FAIL') {
+                failures += logSymbols.error + ' ' + el.heading + '\n';
+                failures += el.elements + '\n\n';
+            }
+        });
 
-      console.log(indentString(failures, ' ', 2));
-      console.log(indentString(passes, ' ', 2));
+        console.log(indentString(failures, ' ', 2));
+        console.log(indentString(passes, ' ', 2));
 
-      next();
-  });
+        next();
+    });
 });
