@@ -71,8 +71,8 @@ test('test local input generates a report that includes all failures for a given
 
     a11y('fixture.html', function (err, reports) {
         t.error(err);
-        var matchingReports = auditsWithHeader(reports, 'This element has an unsupported ARIA attribute');
+        var matchingReports = auditsWithHeader(reports, 'Images should have a text alternative or presentational role');
         t.is(matchingReports.length, 1);
-        t.is(matchingReports[0] && matchingReports[0].elements.match(/\n/g).length, 6);
+        t.is(matchingReports[0] && matchingReports[0].elements.match(/\n/g).length, 7);
     });
 });
