@@ -10,6 +10,7 @@ var globby = require('globby');
 var protocolify = require('protocolify');
 var humanizeUrl = require('humanize-url');
 var a11y = require('./');
+var exitCode = 0;
 
 var cli = meow({
     help: [
@@ -24,7 +25,8 @@ var cli = meow({
         'Options',
         '  --verbose                 Displays more information',
         '  --viewport-size=1024x768  Sets the viewport size',
-        '  --delay                   Sets the delay capturing the page'
+        '  --delay                   Sets the delay capturing the page',
+        '  --fail-on-error           Exits with an error code on audit failures'
     ]
 });
 
@@ -33,6 +35,12 @@ updateNotifier({pkg: cli.pkg}).notify();
 if (cli.input.length === 0) {
     console.error('Please supply at least one URL');
     process.exit(1);
+}
+
+if (cli.flags.failOnError === true) {
+    process.on('beforeExit', function(code) {
+        process.exit(exitCode)
+    });
 }
 
 // Parse the CLI input into valid paths using glob and protocolify.
@@ -68,6 +76,7 @@ eachAsync(urls, function (url, i, next) {
             }
 
             if (el.result === 'FAIL') {
+                exitCode = 1;
                 failures += logSymbols.error + ' ' + el.heading + '\n';
                 failures += el.elements + '\n\n';
             }
