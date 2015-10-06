@@ -38,8 +38,8 @@ if (cli.input.length === 0) {
 }
 
 if (cli.flags.failOnError === true) {
-    process.on('beforeExit', function(code) {
-        process.exit(exitCode)
+    process.on('beforeExit', function (code) {
+        process.exit(exitCode || code);
     });
 }
 
