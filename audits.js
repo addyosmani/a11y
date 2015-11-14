@@ -78,9 +78,11 @@ webpage.open(opts.url, function (status) {
                 }
 
                 return {
+                    code: result.rule.code,
                     heading: result.rule.heading,
                     result: result.result,
                     severity: result.rule.severity,
+                    url: result.rule.url,
                     elements: message
                 };
             });
