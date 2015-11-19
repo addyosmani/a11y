@@ -67,12 +67,25 @@ test('test local input generates a verbose report', function (t) {
 });
 
 test('test local input generates a report that includes all failures for a given violation', function (t) {
-    t.plan(3);
+    t.plan(4);
 
     a11y('fixture.html', function (err, reports) {
         t.error(err);
         var matchingReports = auditsWithHeader(reports, 'Images should have a text alternative or presentational role');
         t.is(matchingReports.length, 1);
         t.is(matchingReports[0] && matchingReports[0].elements.match(/\n/g).length, 7);
+
+        matchingReports = auditsWithHeader(reports, 'Elements with ARIA roles must use a valid, non-abstract ARIA role');
+        t.is(matchingReports[0] && matchingReports[0].elements.match(/\n/g).length, 2);
+    });
+});
+
+test('tests local input on a subsection of the page when a scopeSelector is provided', function (t) {
+    t.plan(3);
+    a11y('fixture.html', {adtConfigProperties: {scopeSelector: '#subpage'}}, function (err, reports) {
+        t.error(err);
+        var matchingReports = auditsWithHeader(reports, 'Elements with ARIA roles must use a valid, non-abstract ARIA role');
+        t.is(matchingReports.length, 1);
+        t.is(matchingReports[0] && matchingReports[0].elements.match(/\n/g).length, 1);
     });
 });
