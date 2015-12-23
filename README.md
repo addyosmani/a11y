@@ -89,14 +89,6 @@ Useful when the site does things after load that you want to capture.
 $ a11y <url> --verbose
 ```
 
-### Exit with an error code on audit failures
-
-```sh
-$ a11y <url> --fail-on-error
-```
-
-Useful if you want to have a11y abort a continuous integration run for example.
-
 ### Write audit to file:
 
 ```sh
