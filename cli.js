@@ -68,6 +68,7 @@ eachAsync(urls, function (url, i, next) {
             }
 
             if (el.result === 'FAIL') {
+                process.exitCode = 1;
                 failures += logSymbols.error + ' ' + el.heading + '\n';
                 failures += el.elements + '\n\n';
             }
