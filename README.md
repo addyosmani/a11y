@@ -1,6 +1,6 @@
 <img width="400px" src="https://cloud.githubusercontent.com/assets/110953/4694241/3ddba98e-57c1-11e4-852a-dc0940345a89.png">
 
-#  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image] ![](http://img.shields.io/badge/unicorn-approved-ff69b4.svg?style=flat)
+#  [![npm version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image] ![](https://img.shields.io/badge/unicorn-approved-ff69b4.svg)
 
 > Easy accessibility audits powered by the [Chrome Accessibility Tools](https://www.npmjs.com/package/accessibility-developer-tools).
 
