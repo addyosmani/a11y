@@ -2,7 +2,8 @@
 var junitReportBuilder = require('junit-report-builder');
 
 module.exports = function(url, audit, timestamp, time) {
-    var suite = junitReportBuilder.testSuite()
+    var builder = junitReportBuilder.newBuilder();
+    var suite = builder.testSuite()
         .name(url)
         .timestamp(timestamp)
         .time(time);
@@ -28,5 +29,5 @@ module.exports = function(url, audit, timestamp, time) {
         }
     });
 
-    return junitReportBuilder.build();
+    return builder.build();
 };
