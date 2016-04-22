@@ -52,6 +52,7 @@
     "globby": "^4.0.0",
     "humanize-url": "^1.0.0",
     "indent-string": "^2.1.0",
+    "junit-report-builder": "^1.1.1",
     "log-symbols": "^1.0.1",
     "meow": "^3.3.0",
     "object-assign": "^4.0.1",

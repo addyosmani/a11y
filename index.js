@@ -5,6 +5,7 @@ var phantomjs = require('phantomjs');
 var objectAssign = require('object-assign');
 var protocolify = require('protocolify');
 var parseJson = require('parse-json');
+var junitReporter = require('./junitReporter');
 
 module.exports = function (url, opts, cb) {
     if (typeof opts !== 'object') {
@@ -31,6 +32,8 @@ module.exports = function (url, opts, cb) {
         height: viewportSize[1] || 768
     });
 
+    var startTimestamp = new Date().getTime();
+
     execFile(phantomjs.path, [
         path.join(__dirname, 'audits.js'),
         JSON.stringify(opts),
@@ -43,6 +46,12 @@ module.exports = function (url, opts, cb) {
             return;
         }
 
-        cb(null, parseJson(stdout));
+        var endTimestamp = new Date().getTime();
+        var duration = endTimestamp - startTimestamp;
+
+        var result = parseJson(stdout);
+        result.junit = junitReporter(url, result.audit, endTimestamp, duration);
+
+        cb(null, result);
     });
 };
