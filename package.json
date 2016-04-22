@@ -27,7 +27,8 @@
   "files": [
     "index.js",
     "cli.js",
-    "audits.js"
+    "audits.js",
+    "junitReporter.js"
   ],
   "keywords": [
     "cli-app",
