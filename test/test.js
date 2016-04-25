@@ -79,3 +79,14 @@ test.cb('test local input generates a report that includes all failures for a gi
         t.end();
     });
 });
+
+test.cb('test it generates a junit report', function (t) {
+    t.plan(3);
+
+    a11y('fixture.html', function (err, reports) {
+        t.ifError(err);
+        t.not(reports.junit, undefined);
+        t.regex(reports.junit, /testcase/);
+        t.end();
+    });
+});
