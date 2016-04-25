@@ -21,8 +21,9 @@ module.exports = function(url, audit, timestamp, time) {
         if(result.result === 'FAIL'){
             var failure = result.heading + ' (' + result.url + ')\n';
 
-            var stacktrace = 'Target: ' + result.elements + '\n\n' +
-                'Severity: ' + result.severity + '\n';
+            var stacktrace = 'Severity: ' + result.severity + '\n\n'+
+                'Target:\n' +
+                result.elements.replace(/\n/g, '\n    \u2022 ');
 
             suite.testCase()
                 .name(name)
