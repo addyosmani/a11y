@@ -17,8 +17,7 @@ module.exports = function(url, audit, timestamp, time) {
         .timestamp(timestamp)
         .time(time);
     audit.forEach(function(result) {
-        var className = fileName + '.' + result.code;
-        var name = result.elements;
+        var name = result.code;
         if(result.result === 'FAIL'){
             var failure = result.heading + ' (' + result.url + ')\n';
 
@@ -26,14 +25,12 @@ module.exports = function(url, audit, timestamp, time) {
                 'Severity: ' + result.severity + '\n';
 
             suite.testCase()
-                .className(className)
                 .name(name)
                 .failure(failure)
                 .stacktrace(stacktrace);
         }
         if(result.result === 'PASS' || result.result === 'NA'){
             suite.testCase()
-                .className(className)
                 .name(name);
         }
     });
