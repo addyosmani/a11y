@@ -1,7 +1,7 @@
 'use strict';
 var path = require('path');
 var execFile = require('child_process').execFile;
-var phantomjs = require('phantomjs');
+var phantomjs = require('phantomjs-prebuilt');
 var objectAssign = require('object-assign');
 var protocolify = require('protocolify');
 var parseJson = require('parse-json');
