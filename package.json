@@ -56,10 +56,12 @@
     "meow": "^3.3.0",
     "object-assign": "^4.0.1",
     "parse-json": "^2.1.0",
-    "phantomjs-prebuilt": "^2.1.12",
     "phantomjs-polyfill": "0.0.2",
+    "phantomjs-prebuilt": "^2.1.12",
     "protocolify": "^1.0.0",
-    "update-notifier": "^0.6.0"
+    "system": "^1.0.6",
+    "update-notifier": "^0.6.0",
+    "webpage": "^0.3.0"
   },
   "devDependencies": {
     "ava": "*",
