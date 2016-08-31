@@ -7,6 +7,7 @@
  */
 var system = require('system');
 var webpage = require('webpage').create();
+
 var opts = JSON.parse(system.args[1]);
 var PAGE_TIMEOUT = 9000;
 var TOOLS_PATH = 'node_modules/accessibility-developer-tools/dist/js/axs_testing.js';
