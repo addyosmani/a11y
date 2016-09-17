@@ -59,15 +59,16 @@
     "phantomjs-polyfill": "0.0.2",
     "phantomjs-prebuilt": "^2.1.12",
     "protocolify": "^1.0.0",
-    "system": "^1.0.6",
-    "update-notifier": "^0.6.0",
-    "webpage": "^0.3.0"
+    "update-notifier": "^0.6.0"
   },
   "devDependencies": {
     "ava": "*",
     "xo": "*"
   },
   "xo": {
-    "space": 4
+    "space": 4,
+    "rules": {
+      "import/no-extraneous-dependencies": "off"
+    }
   }
 }
