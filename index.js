@@ -32,7 +32,7 @@ module.exports = function (url, opts, cb) {
         height: viewportSize[1] || 768
     });
 
-    var startTimestamp = new Date().getTime();
+    var startTimestamp = Date().now();
 
     execFile(phantomjs.path, [
         path.join(__dirname, 'audits.js'),
@@ -46,7 +46,7 @@ module.exports = function (url, opts, cb) {
             return;
         }
 
-        var endTimestamp = new Date().getTime();
+        var endTimestamp = Date().now();
         var duration = endTimestamp - startTimestamp;
 
         var result = parseJson(stdout);
