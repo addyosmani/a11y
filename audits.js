@@ -31,6 +31,18 @@ webpage.onInitialized = function () {
 
 webpage.settings.resourceTimeout = PAGE_TIMEOUT;
 
+if (opts.headers) {
+    var headers = {};
+
+    for (var i in opts.headers) {
+        if (Object.prototype.hasOwnProperty.call(opts, i)) {
+            headers[i] = opts.headers[i];
+        }
+    }
+
+    webpage.customHeaders = headers;
+}
+
 webpage.viewportSize = {
     width: opts.width,
     height: opts.height
