@@ -18,7 +18,7 @@
   ],
   "bin": "cli.js",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
     "test": "xo && ava test/test.js",
@@ -49,26 +49,25 @@
     "accessibility-developer-tools": "^2.6.0",
     "chalk": "^1.0.0",
     "each-async": "^1.1.0",
-    "globby": "^4.0.0",
+    "globby": "^6.1.0",
     "humanize-url": "^1.0.0",
-    "indent-string": "^2.1.0",
+    "indent-string": "^3.1.0",
     "log-symbols": "^1.0.1",
     "meow": "^3.3.0",
-    "object-assign": "^4.0.1",
     "parse-json": "^2.1.0",
     "phantomjs-polyfill": "0.0.2",
     "phantomjs-prebuilt": "^2.1.12",
-    "protocolify": "^1.0.0",
-    "update-notifier": "^0.6.0"
+    "protocolify": "^2.0.0",
+    "update-notifier": "^2.0.0"
   },
   "devDependencies": {
-    "ava": "*",
-    "xo": "*"
+    "ava": "^0.18.0",
+    "xo": "^0.17.0"
   },
   "xo": {
     "space": 4,
-    "rules": {
-      "import/no-extraneous-dependencies": "off"
-    }
+    "ignores": [
+      "audits.js"
+    ]
   }
 }

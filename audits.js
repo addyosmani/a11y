@@ -19,7 +19,7 @@ function formatTrace(trace) {
     return '→ ' + src + ' on line ' + trace.line + fn;
 }
 
-// console.error is broken in PhantomJS
+// `console.error` is broken in PhantomJS
 console.error = function () {
     system.stderr.writeLine([].slice.call(arguments).join(' '));
 };

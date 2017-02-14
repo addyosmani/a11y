@@ -1,12 +1,11 @@
 'use strict';
-var path = require('path');
-var execFile = require('child_process').execFile;
-var phantomjs = require('phantomjs-prebuilt');
-var objectAssign = require('object-assign');
-var protocolify = require('protocolify');
-var parseJson = require('parse-json');
+const path = require('path');
+const execFile = require('child_process').execFile;
+const phantomjs = require('phantomjs-prebuilt');
+const protocolify = require('protocolify');
+const parseJson = require('parse-json');
 
-module.exports = function (url, opts, cb) {
+module.exports = (url, opts, cb) => {
     if (typeof opts !== 'object') {
         cb = opts;
         opts = {};
@@ -15,17 +14,17 @@ module.exports = function (url, opts, cb) {
     opts = opts || {};
 
     if (typeof cb !== 'function') {
-        throw new Error('Callback required');
+        throw new TypeError('Callback required');
     }
 
     if (!(url && url.length > 0)) {
-        throw new Error('Please supply at least one URL');
+        throw new Error('Specify at least one URL');
     }
 
-    var viewportSize = (opts.viewportSize || '').split('x');
+    const viewportSize = (opts.viewportSize || '').split('x');
     delete opts.viewportSize;
 
-    opts = objectAssign({delay: 1}, opts, {
+    opts = Object.assign({delay: 1}, opts, {
         url: protocolify(url),
         width: viewportSize[0] || 1024,
         height: viewportSize[1] || 768
@@ -37,7 +36,7 @@ module.exports = function (url, opts, cb) {
         '--ignore-ssl-errors=true',
         '--ssl-protocol=tlsv1',
         '--local-to-remote-url-access=true'
-    ], function (err, stdout) {
+    ], (err, stdout) => {
         if (err) {
             cb(err);
             return;

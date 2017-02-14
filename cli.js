@@ -1,48 +1,46 @@
 #!/usr/bin/env node
 'use strict';
-var logSymbols = require('log-symbols');
-var meow = require('meow');
-var updateNotifier = require('update-notifier');
-var chalk = require('chalk');
-var eachAsync = require('each-async');
-var indentString = require('indent-string');
-var globby = require('globby');
-var protocolify = require('protocolify');
-var humanizeUrl = require('humanize-url');
-var a11y = require('./');
+const logSymbols = require('log-symbols');
+const meow = require('meow');
+const updateNotifier = require('update-notifier');
+const chalk = require('chalk');
+const eachAsync = require('each-async');
+const indentString = require('indent-string');
+const globby = require('globby');
+const protocolify = require('protocolify');
+const humanizeUrl = require('humanize-url');
+const a11y = require('.');
 
-var cli = meow({
-    help: [
-        'Usage',
-        '  a11y <url>',
-        '',
-        'Example',
-        '  a11y todomvc.com',
-        '  a11y http://todomvc.com https://google.com',
-        '  a11y index.html',
-        '',
-        'Options',
-        '  --verbose                 Displays more information',
-        '  --viewport-size=1024x768  Sets the viewport size',
-        '  --delay                   Sets the delay capturing the page'
-    ]
-});
+const cli = meow(`
+    Usage
+      $ a11y <url>
+
+    Options
+      --viewport-size=<size>  Set the viewport size
+      --delay                 Set the delay capturing the page
+      --verbose               Display more information
+
+    Examples
+      $ a11y todomvc.com
+      $ a11y http://todomvc.com https://google.com
+      $ a11y index.html -=viewport-size=1024x768
+`);
 
 updateNotifier({pkg: cli.pkg}).notify();
 
 if (cli.input.length === 0) {
-    console.error('Please supply at least one URL');
+    console.error('Specify at least one URL');
     process.exit(1);
 }
 
-// Parse the CLI input into valid paths using glob and protocolify.
-var urls = globby.sync(cli.input, {
-    // Ensure not-found paths (like "google.com"), are returned.
+// Parse the CLI input into valid paths using glob and protocolify
+const urls = globby.sync(cli.input, {
+    // Ensure not-found paths (like "google.com"), are returned
     nonull: true
 }).map(protocolify);
 
-eachAsync(urls, function (url, i, next) {
-    a11y(url, cli.flags, function (err, reports) {
+eachAsync(urls, (url, i, next) => {
+    a11y(url, cli.flags, (err, reports) => {
         if (err) {
             console.error(err.message);
             process.exit(err.code || 1);
@@ -53,8 +51,8 @@ eachAsync(urls, function (url, i, next) {
             return;
         }
 
-        var passes = '';
-        var failures = '';
+        let passes = '';
+        let failures = '';
 
         console.log('');
 
@@ -62,20 +60,20 @@ eachAsync(urls, function (url, i, next) {
             console.log(chalk.underline(chalk.cyan(humanizeUrl(url) + '\n')));
         }
 
-        reports.audit.forEach(function (el) {
+        for (const el of reports.audit) {
             if (el.result === 'PASS') {
-                passes += logSymbols.success + ' ' + el.heading + '\n';
+                passes += `${logSymbols.success} ${el.heading}\n`;
             }
 
             if (el.result === 'FAIL') {
                 process.exitCode = 1;
-                failures += logSymbols.error + ' ' + el.heading + '\n';
-                failures += el.elements + '\n\n';
+                failures += `${logSymbols.error} ${el.heading}\n`;
+                failures += `${el.elements}\n\n`;
             }
-        });
+        }
 
-        console.log(indentString(failures, ' ', 2));
-        console.log(indentString(passes, ' ', 2));
+        console.log(indentString(failures, 2));
+        console.log(indentString(passes, 2));
 
         next();
     });

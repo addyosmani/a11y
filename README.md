@@ -1,15 +1,15 @@
 <img width="400px" src="https://cloud.githubusercontent.com/assets/110953/4694241/3ddba98e-57c1-11e4-852a-dc0940345a89.png">
 
-#  [![npm version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image] ![](https://img.shields.io/badge/unicorn-approved-ff69b4.svg)
+# [![npm version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image] ![](https://img.shields.io/badge/unicorn-approved-ff69b4.svg)
 
-> Easy accessibility audits powered by the [Chrome Accessibility Tools](https://www.npmjs.com/package/accessibility-developer-tools).
+> Easy accessibility audits powered by the [Chrome Accessibility Tools](https://www.npmjs.com/package/accessibility-developer-tools)
 
 ![](http://i.imgur.com/Mt751vA.png)
 
 
 ## Install
 
-```sh
+```console
 $ npm install --global a11y
 ```
 
@@ -20,13 +20,13 @@ $ npm install --global a11y
 
 Run an audit against a URL:
 
-```sh
+```console
 $ a11y todomvc.com
 ```
 
-or multiple URLs:
+Or multiple URLs:
 
-```sh
+```console
 $ a11y todomvc.com google.com
 ```
 
@@ -37,47 +37,47 @@ $ a11y todomvc.com google.com
 
 Also works fine against localhost:
 
-```sh
+```console
 $ a11y localhost:9000
 ```
 
-and local files:
+And local files:
 
-```sh
+```console
 $ a11y index.html
 ```
 
 ![](http://i.imgur.com/Ffkrr9D.png)
 
-even with [glob](https://github.com/isaacs/node-glob#glob) patterns:
+Even with [glob](https://github.com/isaacs/node-glob#glob) patterns:
 
-```sh
-$ a11y **/*.html
+```console
+$ a11y '**/*.html'
 ```
 
 ## Options
 
 ### Query help:
 
-```sh
+```console
 $ a11y --help
 ```
 
 ### Customise viewport size
 
-Type: String
-Default: 1024x768
+Type: `string`<br>
+Default: `1024x768`
 
-```sh
+```console
 $ a11y --viewport-size=800x600
 ```
 
 ### Set a custom delay before capturing the page
 
-Type: Number (seconds)
-Default: 1
+Type: `number` *(seconds)*<br>
+Default: `1`
 
-```sh
+```console
 $ a11y --delay=5
 ```
 
@@ -85,13 +85,13 @@ Useful when the site does things after load that you want to capture.
 
 ### Verbose mode:
 
-```sh
+```console
 $ a11y <url> --verbose
 ```
 
 ### Write audit to file:
 
-```sh
+```console
 $ a11y <url> > audit.txt
 ```
 
@@ -101,40 +101,41 @@ $ a11y <url> > audit.txt
 Audit a remote URL and generate an accessibility report:
 
 ```js
-var a11y = require('a11y');
+const a11y = require('a11y');
 
-a11y('twitter.com', function (err, reports) {
-    var audit = reports.audit; // a11y Formatted report
-    var report = reports.report; // DevTools Accessibility Audit formatted report
+a11y('twitter.com', (err, reports) => {
+    const audit = reports.audit; // `a11y` Formatted report
+    const report = reports.report; // DevTools Accessibility Audit formatted report
 });
 ```
 
 Work with the output of `reports.audit`:
 
 ```js
-var a11y = require('a11y');
+const a11y = require('a11y');
 
-a11y('twitter.com', function (err, reports) {
-    reports.audit.forEach(function (el) {
-        // result will be PASS, FAIL or NA
-        if (el.result === 'FAIL') {
+a11y('twitter.com', (err, reports) => {
+    for (const report of reports) {
+        // Result will be PASS, FAIL or NA
+        if (report.result === 'FAIL') {
             // el.heading
             // el.severity
             // el.elements
         }
-    });
+    }
 });
 ```
 
 Passing options:
 
 ```js
-var a11y = require('a11y');
-var options = {
-  viewportSize: '800x600'
+const a11y = require('a11y');
+
+const options = {
+    viewportSize: '800x600'
 };
 
-a11y('twitter.com', options, function (err, reports) {
+a11y('twitter.com', options, (err, reports) => {
     // ...
 });
 ```
@@ -157,11 +158,12 @@ Per the Accessibility Developer Tools, the results in an audit may be one of thr
 
 ## Build-system integration
 
-If you use Grunt, [grunt-a11y](https://github.com/lucalanca/grunt-a11y) is a task by João Figueiredo that uses `a11y` under the hood.
+If you use Grunt, [`grunt-a11y`](https://github.com/lucalanca/grunt-a11y) is a task by João Figueiredo that uses `a11y` under the hood.
+
 
 ## Status
 
-At this time, this module should be relatively reliable when auditing for accessibility issues in static sites. 
+At this time, this module should be relatively reliable when auditing for accessibility issues in static sites.
 
 We are actively working on exploring support for complex web-applications, including those using JavaScript libraries such as Polymer, Angular and React/Flux. We hope to bring this work to the main master branch once it is considered stable.
 
