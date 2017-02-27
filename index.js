@@ -30,13 +30,19 @@ module.exports = (url, opts, cb) => {
         height: viewportSize[1] || 768
     });
 
-    execFile(phantomjs.path, [
+    var args = [
         path.join(__dirname, 'audits.js'),
         JSON.stringify(opts),
         '--ignore-ssl-errors=true',
         '--ssl-protocol=tlsv1',
         '--local-to-remote-url-access=true'
-    ], (err, stdout) => {
+    ];
+
+    if (opts.phantomConfigFile) {
+        args.push('--config=' + opts.phantomConfigFile);
+    }
+
+    execFile(phantomjs.path, args, (err, stdout) => {
         if (err) {
             cb(err);
             return;
