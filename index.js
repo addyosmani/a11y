@@ -1,5 +1,4 @@
 'use strict';
-const path = require('path');
 const execFile = require('child_process').execFile;
 const phantomjs = require('phantomjs-prebuilt');
 const protocolify = require('protocolify');
@@ -25,13 +24,17 @@ module.exports = (url, opts, cb) => {
     delete opts.viewportSize;
 
     opts = Object.assign({delay: 1}, opts, {
+        // Use require.resolve to avoid making assumptions about path locations for node_modules
+        toolsPath: require.resolve('accessibility-developer-tools/dist/js/axs_testing'),
+        bindPolyfillPath: require.resolve('phantomjs-polyfill/bind-polyfill'),
+
         url: protocolify(url),
         width: viewportSize[0] || 1024,
         height: viewportSize[1] || 768
     });
 
     execFile(phantomjs.path, [
-        path.join(__dirname, 'audits.js'),
+        require.resolve('./audits'),
         JSON.stringify(opts),
         '--ignore-ssl-errors=true',
         '--ssl-protocol=tlsv1',

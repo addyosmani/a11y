@@ -10,8 +10,8 @@ var webpage = require('webpage').create();
 
 var opts = JSON.parse(system.args[1]);
 var PAGE_TIMEOUT = 9000;
-var TOOLS_PATH = 'node_modules/accessibility-developer-tools/dist/js/axs_testing.js';
-var BIND_POLYFILL_PATH = 'node_modules/phantomjs-polyfill/bind-polyfill.js';
+var TOOLS_PATH = opts.toolsPath;
+var BIND_POLYFILL_PATH = opts.bindPolyfillPath;
 
 function formatTrace(trace) {
     var src = trace.file || trace.sourceURL;
