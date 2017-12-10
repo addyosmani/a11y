@@ -17,6 +17,8 @@ const cli = meow(`
 
     Options
       --viewport-size=<size>  Set the viewport size
+      --username=<username>   Set the basicauth username
+      --password=<password>   Set the basicauth password
       --delay                 Set the delay capturing the page
       --verbose               Display more information
 

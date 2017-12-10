@@ -36,6 +36,11 @@ webpage.viewportSize = {
     height: opts.height
 };
 
+if (opts.username && opts.password) {
+    webpage.settings.userName = opts.username;
+    webpage.settings.password = opts.password;
+}
+
 webpage.onResourceTimeout = function (err) {
     console.error('Error code:' + err.errorCode + ' ' + err.errorString + ' for ' + err.url);
     phantom.exit(1);
