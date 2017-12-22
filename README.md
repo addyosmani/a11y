@@ -140,7 +140,7 @@ a11y('twitter.com', options, (err, reports) => {
 });
 ```
 
-Currently, the only suported option is:
+Currently, the only supported option is:
 
   - `viewportSize` (String in format WIDTHxHEIGHT, eg `800x600`)
 

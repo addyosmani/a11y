@@ -2,7 +2,7 @@
 
 This brief tutorial will help you get a feel for using `a11y` CLI to audit sites with accessibility issues.
 
-The examples we will use are are taken from the W3C [resources](http://www.w3.org/WAI/demos/bad/) on optimizing for the [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG20/).
+The examples we will use are taken from the W3C [resources](http://www.w3.org/WAI/demos/bad/) on optimizing for the [Web Content Accessibility Guidelines (WCAG) 2.0](http://www.w3.org/TR/WCAG20/).
 
  1. First, make sure you have `a11y` installed as a global utility. You can do this by running `npm install -g a11y` if you haven't already.
  2. Choose a demo from the [Examples](#examples) list below to use for the rest of this tutorial.
