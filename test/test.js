@@ -1,10 +1,21 @@
 'use strict';
 const test = require('ava');
-const a11y = require('..');
+const sinon = require('sinon');
+
+const sandbox = sinon.sandbox.create();
+let a11y;
 
 process.chdir(__dirname);
 
 const auditsWithHeader = (reports, header) => reports.audit.filter(x => x.heading === header);
+
+test.beforeEach(() => {
+    a11y = require('..');
+});
+
+test.afterEach(() => {
+    sandbox.restore();
+});
 
 test('test that an empty URL fails', t => {
     t.throws(() => {
@@ -72,6 +83,29 @@ test.cb('test local input generates a report that includes all failures for a gi
         const matchingReports = auditsWithHeader(reports, 'Images should have a text alternative or presentational role');
         t.is(matchingReports.length, 1);
         t.is(matchingReports[0] && matchingReports[0].elements.match(/\n/g).length, 7);
+        t.end();
+    });
+});
+
+test.cb('test setting the phantomConfigFile value gets passed to execFile appropriately', t => {
+    t.plan(2);
+    let childProcess = require('child_process');
+    let argsToTest = [];
+    sinon.stub(childProcess, 'execFile', (file, args, cb) => {
+        argsToTest = args;
+        cb(null, '{}');
+    });
+
+    // To stub the execFile we need a new a11y each time
+    delete require.cache[require.resolve('..')];
+    // Need to require this in again
+    a11y = require('..');
+
+    a11y('fixture.html', {phantomConfigFile: '/my-config-file.json'}, err => {
+        t.ifError(err);
+        const lastArgument = argsToTest[argsToTest.length - 1];
+        t.is(lastArgument, '--config=/my-config-file.json');
+        delete require.cache[require.resolve('..')];
         t.end();
     });
 });
